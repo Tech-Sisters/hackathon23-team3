@@ -1,0 +1,17 @@
+require("dotenv").config();
+const mongoose = require("mongoose");
+module.exports = () => {
+  mongoose.connect(process.env.db_connection, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  });
+  mongoose.connection.on("open", () => {
+    console.log("DB connection established at http://localhost:5005/");
+  });
+
+  mongoose.connection.on("error", (err) => {
+    console.log("Connection failed" + err);
+  });
+};
