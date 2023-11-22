@@ -29,10 +29,10 @@ exports.getAllUsers = async (req, res) => {
 			}
 		},
 	],
-	(err,users)=>{
+	(err,items)=>{
 	if(err)res.json(err);
 	const pages = limit === undefined ? 1 : Math.ceil(total / limit);
-	res.json({ total,pages, status: 200, users })
+	res.json({ total,pages, status: 200, items })
 }) 
 };
 
@@ -57,9 +57,9 @@ exports.getSingleUserById = async (req, res) => {
 				}
 			},
 		],
-		(err,user)=>{ 
+		(err,items)=>{ 
 		if(err)res.json(err);
-		res.json(user)
+		res.json({items})
 	}) 
 
 };
@@ -109,9 +109,9 @@ exports.createUser = async (req, res) => {
 										}
 									},
 								],
-								(err,user)=>{ 
+								(err,items)=>{ 
 								if(err)res.json(err);
-								res.json({user})
+								res.json({items})
 							}) 
 						})
 				}
