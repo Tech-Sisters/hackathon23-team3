@@ -7,8 +7,8 @@ const MoviesSchema = new Schema(
     description: { type: String, required: true },
     image_url: { type: String },
     genre: { type: Array },
-    isKidFriendly: { type: Boolean, required: true },
-    isActive: { type: Boolean, default: false },
+    kid_friendly: { type: Boolean, required: true },
+    is_active: { type: Boolean, default: false },
   },
   { timestamps: true }
 );
