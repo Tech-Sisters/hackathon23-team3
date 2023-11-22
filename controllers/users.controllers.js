@@ -24,15 +24,15 @@ exports.getAllUsers = async (req, res) => {
 		},  
 		{
 			$project:{
-				username:true,email:true,password:true,
+				username:true,email:true,
 				role:true,is_active:true,createdAt:true,updatedAt:true,image_url:true,role:true
 			}
 		},
 	],
-	(err,data)=>{
+	(err,users)=>{
 	if(err)res.json(err);
 	const pages = limit === undefined ? 1 : Math.ceil(total / limit);
-	res.json({ total,pages, status: 200, data })
+	res.json({ total,pages, status: 200, users })
 }) 
 };
 
@@ -52,14 +52,14 @@ exports.getSingleUserById = async (req, res) => {
 			}, 
 			{
 				$project:{
-					username:true,email:true,password:true,
-				role:true,is_active:true,createdAt:true,updatedAt:true,image_url:true,role:true
+					username:true,email:true,
+				role:true,is_active:true,createdAt:true,updatedAt:true,image_url:true
 				}
 			},
 		],
-		(err,data)=>{ 
+		(err,user)=>{ 
 		if(err)res.json(err);
-		res.json({data})
+		res.json(user)
 	}) 
 
 };
@@ -69,13 +69,10 @@ exports.getSingleUserById = async (req, res) => {
 
 
 exports.createUser = async (req, res) => {
-	console.log(req.body)
 			const {
 				username,
 				email,
 				password,
-				image_url,
-				is_active,
 				role
 			} = req.body;
 			await UsersModel.countDocuments({ "email": email },async function(err,count){
@@ -89,8 +86,6 @@ exports.createUser = async (req, res) => {
 						username,
 						email,
 						password:hashedPassword,
-						image_url,
-						is_active,
 						role
 					});
 					newUser
@@ -114,9 +109,9 @@ exports.createUser = async (req, res) => {
 										}
 									},
 								],
-								(err,data)=>{ 
+								(err,user)=>{ 
 								if(err)res.json(err);
-								res.json({data})
+								res.json({user})
 							}) 
 						})
 				}
