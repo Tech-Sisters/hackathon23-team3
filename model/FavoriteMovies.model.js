@@ -3,10 +3,8 @@ const Schema = mongoose.Schema;
  
 const FavoriteMoviesSchema = new Schema(
 	{ 
-		userId: { type: Schema.Types.ObjectId, ref: 'user'},
-		movieId: { type: Schema.Types.ObjectId, ref: 'movie' },
-		isActive: { type: Boolean, default: true },
-		isDeleted: { type: Boolean, default: false }, 
+		user_id: { type: Schema.Types.ObjectId, ref: 'user'},
+		movie_id: { type: Schema.Types.ObjectId, ref: 'movie' },
 	},
 	{ timestamps: true }  
 );    
