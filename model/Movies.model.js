@@ -9,8 +9,9 @@ const MoviesSchema = new Schema(
     genre: { type: Array },
     kid_friendly: { type: Boolean, required: true },
     is_active: { type: Boolean, default: false },
+    is_admin_suggested: { type: Boolean, default: false },
   },
   { timestamps: true }
-);
+); 
 
 module.exports = mongoose.model("movie", MoviesSchema);
