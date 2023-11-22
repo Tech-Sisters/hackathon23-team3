@@ -5,6 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const upload = require("express-fileupload");
 const cors = require("cors");
+const formData = require('express-form-data');
 
 //ROUTES
 var indexRouter = require("./routes/index");
@@ -18,6 +19,7 @@ const verifyToken = require("./auth/verifyToken");
 // const isAdmin = require('./auth/isAdmin');
 
 var app = express();
+app.use(formData.parse());
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
