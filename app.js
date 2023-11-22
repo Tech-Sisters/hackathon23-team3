@@ -13,6 +13,7 @@ var usersRouter = require("./routes/users.routes");
 var awsRouer = require("./routes/aws.routes");
 var moviesRouter = require("./routes/movies.routes");
 var favoriteMoviesRouter = require("./routes/favoriteMovies.routes");
+var booksRouter = require("./routes/books.routes");
 
 //middlewares
 const verifyToken = require("./auth/verifyToken");
@@ -50,6 +51,7 @@ app.use("/", usersRouter);
 app.use("/", awsRouer);
 app.use("/", moviesRouter);
 app.use("/", favoriteMoviesRouter);
+app.use("/", booksRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
