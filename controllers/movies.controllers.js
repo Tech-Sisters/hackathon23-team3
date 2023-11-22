@@ -19,88 +19,20 @@ exports.getAll =async (req,res)=>{
 		 },
 		 {
 			 $limit:limit*1 
-		 }, 
-		 {
-            $lookup:{
-				from:'watchlists',
-				localField:"_id",
-				foreignField:'movieId',
-				as:'watchlistCount'
-			}, 
-			
-		}, 
-		{
-			$addFields: { watchlistCount: { $size: "$watchlistCount" } }  
-		},
-		{
-            $lookup:{
-				from:'watcheds',
-				localField:"_id",
-				foreignField:'movieId', 
-				as:'watchedCount' 
-			},
-			
-		},
-		{
-			$addFields: { watchedCount: { $size: "$watchedCount" } }
-		}, 
-		{
-            $lookup:{
-				from:'likeds',
-				localField:"_id", 
-				foreignField:'movieId',
-				as:'likesCount'
-			}, 
-			
-		},
-		{
-			$addFields: { likesCount: { $size: "$likesCount" } } 
-		}, 
-		{ 
-            $lookup:{
-				from:'userratings',
-				localField:"_id",
-				foreignField:'movieId', 
-				as:'userRatingIds'
-			} 
-		},
-		{
-            $lookup:{
-				from:'comments',
-				localField:"_id",
-				foreignField:'movieId', 
-				as:'commentIds'
-			}  
-		},
-		{
-            $lookup:{
-				from:'lists', 
-				localField:"_id",
-				foreignField:'movieIds',
-				as:'listedCount'
-			}, 
-			
-		}, 
-		{
-			$addFields: { listedCount: { $size: "$listedCount" } }  
-		},
-	
+		 },
 		{
 			$project:{
-				type:true,imdb_id:true,tmdb_id:true,imdb_rating:true,image_path:true,
-				backdrop_path:true,original_title:true,isActive:true,isDeleted:true,
-				'userRatingIds.rating':true,'userRatingIds.userId':true,
-				watchlistCount:true,watchedCount:true,likesCount:true,
-				commentIds:true,runtime:true,release_date:true,
-				listedCount:true,commentLikes:true
+				title:true,description:true,image_url:true,
+				isActive:true,
+				isKidFriendly:true
 			} 
 		},
 	
 	],
-	(err,response)=>{
+	(err,movies)=>{
 	if(err)res.json(err);
 	const pages = limit === undefined ? 1 : Math.ceil(total / limit);
-	res.json({ total,pages, status: 200, response })
+	res.json({ total,pages, status: 200, movies })
 }) 
 }
 
@@ -117,24 +49,16 @@ exports.searchWithTitle = async (req, res, next) => {
 
  
 exports.create = async (req, res) => {
-	await MoviesModel.findOne({tmdb_id:req.body.tmdb_id}, async (err, result) => { 
-        
-		if(err) res.json({status: false, message: err })
+	await MoviesModel.findOne({title:req.body.title}, async (err, result) => { 
+		if(result) res.json({status: 409, message: 'Movie with the same title exists' })
 
 		if(result === null) {
 			const newMovie = await new MoviesModel({
-				type: req.body.type,
-				imdb_id: req.body.imdb_id,
-				tmdb_id:req.body.tmdb_id,
-				imdb_rating:req.body.imdb_rating,
-				image_path:req.body.image_path,
-				backdrop_path:req.body.backdrop_path,
-				original_title: req.body.original_title, 
-				runtime:req.body.runtime,
+				image_url:req.body.image_url,
+				title: req.body.title, 
+				description:req.body.description,
 				genre:req.body.genre,
-				release_date:req.body.release_date,
-				isActive: req.body.isActive,
-				isDeleted: req.body.isDeleted,         
+                isKidFriendly:req.body.isKidFriendly      
 
 			});
 		 
@@ -144,177 +68,24 @@ exports.create = async (req, res) => {
 				await MoviesModel.aggregate(
 					[ 
 						{
-							$match: { tmdb_id:req.body.tmdb_id}  
-						},
-						{
-							$lookup:{
-								from:'watchlists',
-								localField:"_id",
-								foreignField:'movieId',
-								as:'watchlistCount'
-						}, 
-							
-						}, 
-						{
-							$addFields: { watchlistCount: { $size: "$watchlistCount" } }
-						},
-						{
-							$lookup:{
-								from:'watcheds',
-								localField:"_id",
-								foreignField:'movieId', 
-								as:'watchedCount'
-							},
-							
-						},
-						{
-							$addFields: { watchedCount: { $size: "$watchedCount" } }
-						}, 
-						{
-							$lookup:{
-								from:'likeds',
-								localField:"_id", 
-								foreignField:'movieId',
-								as:'likesCount'
-							}, 
-							
-						},
-						{
-							$addFields: { likesCount: { $size: "$likesCount" } } 
-						}, 
-						{ 
-							$lookup:{
-								from:'userratings',
-								localField:"_id",
-								foreignField:'movieId', 
-								as:'userRatingIds'
-							} 
-						},
-						{
-							$lookup:{
-								from:'comments',
-								localField:"_id",
-								foreignField:'movieId', 
-								as:'commentIds'
-							}  
-						},
-						{
-							$lookup:{
-								from:'lists', 
-								localField:"_id",
-								foreignField:'movieIds',
-								as:'listedCount'
-							}, 
-							
-						}, 
-						{
-							$addFields: { listedCount: { $size: "$listedCount" } }  
+							$match: { _id: mongoose.Types.ObjectId(data._id) }
 						},
 						{
 							$project:{
-								type:true,imdb_id:true,tmdb_id:true,imdb_rating:true,
-								image_path:true,backdrop_path:true,original_title:true,
-								isActive:true,isDeleted:true,'userRatingIds.rating':true,
-								'userRatingIds.userId':true,watchlistCount:true,watchedCount:true,
-								likesCount:true,commentIds:true,runtime:true,release_date:true,
-								listedCount:true
+								title:true,description:true,image_url:true,
+								isActive:true,
+								isKidFriendly:true
 							} 
 						},
 					
 					],
-					(err,data)=>{
+					(err,movie)=>{
 					if(err)res.json(err);
-					res.json({ status: 200, data })
+					res.json({ status: 200, movie })
 				})
 				)
 				.catch((err) => res.json({ status: false, message: err }))
 					
-		} else {
-			await MoviesModel.aggregate(
-				[ 
-					{
-						$match: { tmdb_id:req.body.tmdb_id}  
-					},
-					{
-						$lookup:{
-							from:'watchlists',
-							localField:"_id",
-							foreignField:'movieId',
-							as:'watchlistCount'
-					}, 
-						
-					}, 
-					{
-						$addFields: { watchlistCount: { $size: "$watchlistCount" } }
-					},
-					{
-						$lookup:{
-							from:'watcheds',
-							localField:"_id",
-							foreignField:'movieId', 
-							as:'watchedCount'
-						},
-						
-					},
-					{
-						$addFields: { watchedCount: { $size: "$watchedCount" } }
-					}, 
-					{
-						$lookup:{
-							from:'likeds',
-							localField:"_id", 
-							foreignField:'movieId',
-							as:'likesCount'
-						}, 
-						
-					},
-					{
-						$addFields: { likesCount: { $size: "$likesCount" } } 
-					}, 
-					{ 
-						$lookup:{
-							from:'userratings',
-							localField:"_id",
-							foreignField:'movieId', 
-							as:'userRatingIds'
-						} 
-					},
-					{
-						$lookup:{
-							from:'comments',
-							localField:"_id",
-							foreignField:'movieId', 
-							as:'commentIds'
-						}  
-					},
-					{
-						$lookup:{
-							from:'lists', 
-							localField:"_id",
-							foreignField:'movieIds',
-							as:'listedCount'
-						}, 
-						
-					}, 
-					{
-						$addFields: { listedCount: { $size: "$listedCount" } }  
-					},
-					{
-						$project:{
-							type:true,imdb_id:true,tmdb_id:true,imdb_rating:true,
-							image_path:true,backdrop_path:true,original_title:true,
-							isActive:true,isDeleted:true,'userRatingIds.rating':true,
-							'userRatingIds.userId':true,watchlistCount:true,watchedCount:true,
-							likesCount:true,commentIds:true,runtime:true,release_date:true,
-							listedCount:true
-						} 
-					},
-				
-				],
-				(err,data)=>{
-				if(err)res.json(err);
-				res.json({ status: 200, data })
-			}) 
 		}
 	})
 	
