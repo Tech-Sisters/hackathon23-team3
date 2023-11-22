@@ -15,6 +15,7 @@ var moviesRouter = require("./routes/movies.routes");
 var favoriteMoviesRouter = require("./routes/favoriteMovies.routes");
 var booksRouter = require("./routes/books.routes");
 var favoriteBooksRouter = require("./routes/favoriteBooks.routes");
+var commentsRouter = require("./routes/comments.routes");
 
 //middlewares
 const verifyToken = require("./auth/verifyToken");
@@ -54,6 +55,7 @@ app.use("/", moviesRouter);
 app.use("/", favoriteMoviesRouter);
 app.use("/", booksRouter);
 app.use("/", favoriteBooksRouter);
+app.use("/", commentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
