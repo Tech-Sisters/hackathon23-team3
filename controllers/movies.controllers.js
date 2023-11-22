@@ -29,10 +29,10 @@ exports.getAll = async (req, res) => {
         },
       },
     ],
-    (err, movies) => {
+    (err, items) => {
       if (err) res.json(err);
       const pages = limit === undefined ? 1 : Math.ceil(total / limit);
-      res.json({ total, pages, status: 200, movies });
+      res.json({ total, pages, status: 200, items });
     }
   );
 };
@@ -42,10 +42,10 @@ exports.searchWithTitle = async (req, res, next) => {
     title: { $regex: req.body.title, $options: "i" },
   }).countDocuments();
   try {
-    const movies = await MoviesModel.find({
+    const items = await MoviesModel.find({
       title: { $regex: req.body.title, $options: "i" },
     });
-    res.json({ status: 200, total, message: "Filtered movies", movies });
+    res.json({ status: 200, total, message: "Filtered movies", items });
   } catch (error) {
     next({ status: 404, message: error });
   }
@@ -84,9 +84,9 @@ exports.create = async (req, res) => {
                   },
                 },
               ],
-              (err, movie) => {
+              (err, items) => {
                 if (err) res.json(err);
-                res.json({ status: 200, movie });
+                res.json({ status: 200, items });
               }
             )
         )
@@ -111,9 +111,9 @@ exports.getSingleMovie = async (req, res) => {
         },
       },
     ],
-    (err, movie) => {
+    (err, items) => {
       if (err) res.json(err);
-      res.json({ status: 200, movie });
+      res.json({ status: 200, items });
     }
   );
 };
