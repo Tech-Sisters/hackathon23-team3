@@ -8,7 +8,7 @@ exports.getAll = async (req, res) => {
   await BooksModel.aggregate(
     [
       {
-        $sort: {
+        $sort: { 
           createdAt: -1,
         },
       },
@@ -26,6 +26,7 @@ exports.getAll = async (req, res) => {
           is_active: true,
           kid_friendly: true,
           genre: true,
+          is_admin_suggested:true
         },
       },
     ],
@@ -81,6 +82,7 @@ exports.create = async (req, res) => {
                     image_url: true,
                     is_active: true,
                     kid_friendly: true,
+                    is_admin_suggested:true
                   },
                 },
               ],
@@ -108,6 +110,7 @@ exports.getSingleBook = async (req, res) => {
           is_active: true,
           kid_friendly: true,
           genre: true,
+          is_admin_suggested:true
         },
       },
     ],
