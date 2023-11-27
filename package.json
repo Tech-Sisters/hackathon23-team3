@@ -25,5 +25,10 @@
     "nodemon": "^2.0.19",
     "swig": "^1.4.2",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5"
   }
 }

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/landing';
+import Footer from './components/footer';
 
 
 
@@ -10,7 +11,7 @@ function App() {
 	const routes = [
 		{
 			path: '/',
-			element: <LandingPage />
+			element: <LandingPage/>
 		},
 		
 
