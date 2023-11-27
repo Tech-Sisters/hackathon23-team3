@@ -32,7 +32,6 @@ module.exports = {
 		greywhite: "#D9D9D9",
 		ash: "#cecfd0",
 		hover: "#EF709A",
-		primary: "#E31C5F",
 		white: "#FFFFFF",
 		grey: "#707070",
 		gray: "#33373A",

@@ -16,7 +16,7 @@ function Head() {
                               </Link>
 
                               <nav className="flex shrink items-center text-white space-x-6">
-                                    <Link to="/" className="text-lg hover:text-hover">
+                                    <Link to="/homepage" className="text-lg hover:text-hover">
                                           Home
                                     </Link>
                                     <Link to="/" className="text-lg hover:text-hover">
@@ -29,9 +29,9 @@ function Head() {
                                     </Link>
                               </nav>
 
-                              <button className="button bg-pink text-white py-1 px-4 rounded hover:bg-opacity-90 transition duration-300">
+                              <Link to="/login" className="button bg-pink text-white py-1 px-4 rounded hover:bg-opacity-90 transition duration-300">
                                     Login
-                              </button>
+                              </Link>
                         </div>
                   </header>
                  
