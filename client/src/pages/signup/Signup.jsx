@@ -1,93 +1,96 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { Link } from "react-router-dom";
+import Logo from "../../assets/Logo.svg";
 // import Navbar from "../../components/Navbar";
 import Footer from "../../components/footer";
 
-
-const Signup = () => {
+const Login = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+  };
   return (
-    <><div>
-      <div className="font-serif">
-        {/* <Navbar /> */}
+    <><div className="font-serif py-8 h-auto">
+      {/* <Navbar /> */}
 
-        <h4 className="uppercase text-primary text-3xl font-extrabold text-center my-10">
-          logo
+      <div className="w-[40%] drop-shadow-lg  rounded-md mx-auto bg-white p-10 flex flex-col gap-8">
+        <h4 className="text-center text-3xl text-black-200 font-extrabold">
+          Create account
         </h4>
 
-        <div className="shadow-xl rounded-md bg-white md:w-[650px] w-[400px] h-auto m-auto p-10 flex flex-col gap-8">
-          <h4 className="text-center text-3xl font-medium">Create account</h4>
+        <form onSubmit={handleSubmit} className=" flex flex-col gap-5 mt-8">
+          <label htmlFor="" className="font-normal text-md text-text">
+            Your name <span className="text-pink">*</span>
+          </label>
+          <input type="text"
+            id="fn"
+            name="fn_name"
+            placeholder="First and last name"
+            className="p-2 border bg-offwhite border-grey rounded" required 
+          />
 
-          <form className=" flex flex-col gap-5">
-            <label htmlFor="" className="font-normal text-2xl text-black-200">
-              Your name <span className="text-primary">*</span>
-            </label>
-            <input
-              type="text"
-              className="p-2 border border-grey rounded-lg outline-none"
-              required />
+          <label htmlFor="" className="font-normal text-md text-text">
+            Email <span className="text-pink">*</span>
+          </label>
+          <input type="email"
+            id="email"
+            name="email"
+            placeholder="Your emaild"
+            className="p-2  bg-offwhite border border-grey rounded focus:outline-pink focus:border-pink" required 
+          />
+          <label htmlFor="" className="font-normal text-md text-text">
+            Age <span className="text-pink">*</span>
+          </label>
+          <input type="number"
+            id="age"
+            name="age"
+            placeholder="22"
+            className="p-2  bg-offwhite border border-grey rounded focus:outline-pink focus:border-pink" required 
+          />
+          <label htmlFor="" className="font-normal text-md text-text">
+            Gender <span className="text-pink">*</span>
+          </label>
+          <input type="text"
+            id="gender"
+            name="gender"
+            placeholder="Enter gender"
+            className="p-2  bg-offwhite border border-grey rounded focus:outline-pink focus:border-pink" required 
+          />
+          <label htmlFor="" className="font-normal text-md text-text">
+            Password <span className="text-pink">*</span>
+          </label>
+          <input type="password"
+            id="password"
+            name="password"
+            placeholder=""
+            className="p-2  bg-offwhite border border-grey rounded focus:outline-pink focus:border-pink" required 
+          />
+          <label htmlFor="" className="font-normal text-md text-text">
+            Confirm password <span className="text-pink">*</span>
+          </label>
+          <input type="password"
+            id="password"
+            name="password"
+            placeholder=""
+            className="p-2  bg-offwhite border border-grey rounded focus:outline-pink focus:border-pink" required 
+          />
 
-            <label htmlFor="" className="font-normal text-2xl text-black-200">
-              Email <span className="text-primary">*</span>
-            </label>
-            <input
-              type="email"
-              className="p-2 border border-grey rounded-lg outline-none"
-              required />
+          <button className="p-2 bg-pink text-white text-xl rounded">Create your free account</button>
+          <p className="text-sm font-normal text-black-200">Already have an account?<span className="text-pink cursor-pointer underline decoration-solid pl-1"><Link to="/login">Login</Link></span></p>
 
-            <label htmlFor="" className="font-normal text-2xl text-black-200">
-              Age <span className="text-primary">*</span>
-            </label>
-            <input
-              type="text"
-              className="p-2 border border-grey rounded-lg outline-none"
-              required />
+        </form>
 
-            <label htmlFor="" className="font-normal text-2xl text-black-200">
-              Gender <span className="text-primary">*</span>
-            </label>
-            <input
-              type="text"
-              className="p-2 border border-grey rounded-lg outline-none"
-              required />
 
-            <label
-              htmlFor=""
-              className="font-normal text-2xl text-black-200 mt-6"
-            >
-              Password <span className="text-primary">*</span>
-            </label>
-            <input
-              type="password"
-              className="p-2 border border-grey rounded-lg outline-none"
-              required />
 
-            <label
-              htmlFor=""
-              className="font-normal text-2xl text-black-200 mt-6"
-            >
-              Confirm password <span className="text-primary">*</span>
-            </label>
-            <input
-              type="password"
-              className="p-2 border border-grey rounded-lg outline-none"
-              required />
 
-            <button className="p-2 bg-primary text-white mt-6 text-2xl font-medium">
-              Create account
-            </button>
-          </form>
-
-          <p className="  font-normal text-black-200 text-lg text-center">
-            Already have an account? <span className="text-primary">Login</span>
-          </p>
-        </div>
-
-        <p className="text-xl font-normal text-black-200 text-center my-10">
-          @HalalReadsnReels 2023
-        </p>
       </div>
-    </div><Footer /></>
+
+
+
+    </div><Footer /></> 
+
   );
 };
 
-export default Signup;
+export default Login;
