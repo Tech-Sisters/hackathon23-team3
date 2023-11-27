@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
-import image from "../../assets/ellipse16.png";
+import image from "../../assets/Ellipse16.png";
 import { Link } from "react-router-dom";
 import bilal from "../../assets/bilal.png";
 import moana from "../../assets/moana.png";
