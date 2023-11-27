@@ -1,48 +1,59 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/Logo.svg";
 // import Navbar from "../../components/Navbar";
+import Footer from "../../components/footer";
 
 const Login = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+  };
   return (
-    <div className="font-serif">
+    <><div className="font-serif py-8 h-auto">
       {/* <Navbar /> */}
-      
-      
 
-      <div className="w-[50%] shadow-md border border-solid rounded-md mx-auto mb-8 bg-offwhite h-auto p-10 flex flex-col gap-8">
-        <h4 className="text-center text-3xl font-extrabold mb-8">
+      <div className="w-[40%] drop-shadow-lg  rounded-md mx-auto bg-white p-10 flex flex-col gap-8">
+        <h4 className="text-center text-3xl text-black-200 font-extrabold">
           Login to continue
         </h4>
 
-        <form className=" flex flex-col gap-5 mt-24">
-          <label htmlFor="" className="font-normal text-xs text-text">
+        <form onSubmit={handleSubmit} className=" flex flex-col gap-5 mt-8">
+          <label htmlFor="" className="font-normal text-md text-text">
             Enter email <span className="text-pink">*</span>
           </label>
-          <input type="email" className="p-2 border border-grey rounded" required />
+          <input type="email"
+            id="fn"
+            name="fn_name"
+            placeholder="Your full name"
+            className="p-2 border bg-offwhite border-grey rounded" required />
 
-          <label htmlFor="" className="font-normal text-xs text-text">
+          <label htmlFor="" className="font-normal text-md text-text">
             Enter password <span className="text-pink">*</span>
           </label>
-          <input type="password" className="p-2 border border-grey rounded focus:outline-pink focus:border-pink" required />
-          <p className=" font-medium text-xs text-pink">Forgot your password?</p>
+          <input type="password"
+            id="password"
+            name="password"
+            placeholder="Your password"
+            className="p-2  bg-offwhite border border-grey rounded focus:outline-pink focus:border-pink" required />
+          <p className=" font-medium text-sm text-pink">Forgot your password?</p>
 
-          <button className="p-2 bg-pink text-white text-2xl rounded mb-4">Login</button>
+          <button className="p-2 bg-pink text-white text-2xl rounded">Login</button>
         </form>
 
-        <p className="font-normal text-text text-lg text-center">New to Halal Reads ‘n’ Reels?</p>
+        <p className="font-normal text-text text-md text-center">New to Halal Reads ‘n’ Reels?</p>
 
-        <button className="text-xl text-pink border border-pink rounded p-2 mb-4 mt-4">Create your free account</button>
-      
+        <Link to="/signup" className="button text-center text-xl text-pink border border-pink rounded p-2">Create your free account</Link>
+
         <p className="underline decoration-solid text-xs font-normal text-text text-center">View our privacy and policy</p>
 
       </div>
 
-      <p className="text-sm font-normal text-black-200 text-center my-24">@HalalReadsnReels 2023</p>
 
-      
-    </div>
+
+    </div><Footer /></> 
+
   );
 };
 

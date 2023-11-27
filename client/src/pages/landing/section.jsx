@@ -9,13 +9,13 @@ function Section() {
       <section className="bg-offwhite h-[80vh]">
         <div className="flex items-center justify-between mx-auto w-[90%]">
           <div className="w-[50%] py-24">
-            <p className="text-3xl text-dark font-extrabold pb-4">Thoughtful Reviews</p>
+            <p className="text-4xl text-black-200 font-extrabold pb-4">Thoughtful Reviews</p>
             <p className="text-text font-normal pb-4">Our team of dedicated reviewers provides comprehensive and thoughtful analyses, highlighting the Islamic values, cultural significance, and artistic merits of each movie and book. Gain deeper insights into stories that inspire, educate, and uplift while staying true to your beliefs.</p>
             <p className="text-text font-normal pb-6">Our aim is to offer you a nuanced understanding and appreciation 
               for these content, empowering you to make informed choices that resonate 
               with your beliefs.
             </p>
-            <button className="button bg-pink text-white py-1 px-4 rounded hover:bg-opacity-90 transition duration-300">
+            <button className="button cursor-pointer bg-pink text-white py-1 px-4 rounded hover:bg-opacity-90 transition duration-300">
               Get started
             </button>
           </div>

@@ -12,7 +12,7 @@ function Hero() {
   };
   return (
     <>
-      <section className="gradient bg-dark h-[108vh] pt-24">
+      <section className="gradient bg-dark h-[100vh] pt-24">
         <div className="flex items-center justify-between w-[90%] mx-auto py-24">
 
           <div className="w-[50%]">
@@ -29,7 +29,7 @@ function Hero() {
 
           <div className="bg-offwhite z-40 contain">
             <div className="flex items-center justify-center">
-              <h2 className="text-2xl text-dark font-bold text-center">Sign up for our newsletter</h2>
+              <h2 className="text-2xl text-black-200 font-bold text-center">Sign up for our newsletter</h2>
               <p className="animate__animated animate__tada animate__delay-1s animate__infinite text-2xl">👋</p>
             </div>
             
@@ -61,7 +61,7 @@ function Hero() {
               <div className="text-center mt-8">
                 <button
                   type="submit"
-                  className="bg-pink w-full text-white btn"
+                  className="bg-pink cursor-pointer w-full text-white btn"
                 >
                   Subscribe
                 </button>

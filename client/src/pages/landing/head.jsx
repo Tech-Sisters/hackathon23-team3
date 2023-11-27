@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/logo.png';
+import BrandLogo from '../../assets/Logo.svg';
 import '../../styles/head.css';
 
 function Head() {
@@ -12,7 +12,7 @@ function Head() {
                   <header className="fixed w-full z-10 bg-black flex py-3">
                         <div className="w-[90%]  mx-auto flex items-center justify-between">
                               <Link to="/">
-                                    <img src={Logo} alt="Logo" className="brandLogo" />
+                                    <img src={BrandLogo} alt="Logo" className="brandLogo" />
                               </Link>
 
                               <nav className="flex shrink items-center text-white space-x-6">

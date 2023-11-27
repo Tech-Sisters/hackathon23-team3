@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import Navbar from "../../components/Navbar";
+// import Navbar from "../../components/Navbar";
+import Footer from "../../components/footer";
+
 
 const Signup = () => {
   return (
-    <div>
+    <><div>
       <div className="font-serif">
-        <Navbar />
+        {/* <Navbar /> */}
 
         <h4 className="uppercase text-primary text-3xl font-extrabold text-center my-10">
           logo
@@ -22,8 +24,7 @@ const Signup = () => {
             <input
               type="text"
               className="p-2 border border-grey rounded-lg outline-none"
-              required
-            />
+              required />
 
             <label htmlFor="" className="font-normal text-2xl text-black-200">
               Email <span className="text-primary">*</span>
@@ -31,8 +32,7 @@ const Signup = () => {
             <input
               type="email"
               className="p-2 border border-grey rounded-lg outline-none"
-              required
-            />
+              required />
 
             <label htmlFor="" className="font-normal text-2xl text-black-200">
               Age <span className="text-primary">*</span>
@@ -40,8 +40,7 @@ const Signup = () => {
             <input
               type="text"
               className="p-2 border border-grey rounded-lg outline-none"
-              required
-            />
+              required />
 
             <label htmlFor="" className="font-normal text-2xl text-black-200">
               Gender <span className="text-primary">*</span>
@@ -49,8 +48,7 @@ const Signup = () => {
             <input
               type="text"
               className="p-2 border border-grey rounded-lg outline-none"
-              required
-            />
+              required />
 
             <label
               htmlFor=""
@@ -61,8 +59,7 @@ const Signup = () => {
             <input
               type="password"
               className="p-2 border border-grey rounded-lg outline-none"
-              required
-            />
+              required />
 
             <label
               htmlFor=""
@@ -73,8 +70,7 @@ const Signup = () => {
             <input
               type="password"
               className="p-2 border border-grey rounded-lg outline-none"
-              required
-            />
+              required />
 
             <button className="p-2 bg-primary text-white mt-6 text-2xl font-medium">
               Create account
@@ -82,7 +78,7 @@ const Signup = () => {
           </form>
 
           <p className="  font-normal text-black-200 text-lg text-center">
-          Already have an account? <span className="text-primary">Login</span>
+            Already have an account? <span className="text-primary">Login</span>
           </p>
         </div>
 
@@ -90,7 +86,7 @@ const Signup = () => {
           @HalalReadsnReels 2023
         </p>
       </div>
-    </div>
+    </div><Footer /></>
   );
 };
 

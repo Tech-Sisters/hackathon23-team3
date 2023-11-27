@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import img from '../../assets/logo.png';
+import img from '../../assets/Logo.svg';
 import { FaCheckCircle } from 'react-icons/fa';
 import '../../styles/feature.css';
 
@@ -14,8 +14,9 @@ function Feature() {
             <img src={img} alt="" className="couple" />
 
           </div>
-          <div className="w-[50%] py-24">
-            <p className="text-3xl text-dark font-extrabold pb-4">Why Choose Halal Reads and Reels?</p>
+          <div className="w-[5
+            0%] py-24">
+            <p className="text-3xl text-black-200 font-extrabold pb-4">Why Choose Halal Reads and Reels?</p>
             
             <span className="flex items-center pb-3">
             <FaCheckCircle  className="text-pink text-2xl" /> 
@@ -61,35 +62,3 @@ function Feature() {
 }
 
 export default Feature;
-
-
-
-
-
-
-
-
-// Explore a curated collection of Islamic-centric movies and books that align with your faith and principles. From inspiring cinematic experiences to thought-provoking literary masterpieces, our platform showcases a diverse array of halal entertainment options.
-
-// **Thoughtful Reviews**
-
-
-// **Foster Meaningful Discussions**
-
-// Join a community passionate about Islamic entertainment! Engage in meaningful discussions, share your thoughts, and connect with fellow enthusiasts. Explore diverse perspectives and celebrate the richness of Islamic storytelling together.
-
-// **Personalized Recommendations**
-
-// Tailored suggestions that resonate with your preferences! Our personalized recommendation system considers your interests, genres you love, and your viewing and reading history to offer suggestions perfectly suited to your tastes.
-
-// **Stay Informed**
-
-// Stay updated on the latest halal entertainment offerings! Receive notifications about new releases, author interviews, film festivals, and events that celebrate Islamic culture and storytelling.
-
-// **Embark on Your Halal Entertainment Journey**
-
-// Whether you seek heartwarming stories that echo Islamic values or cinematic experiences that inspire, Halal Reads and Reels is your companion for discovering meaningful entertainment. Start your halal entertainment journey with us and explore a world of captivating narratives that resonate with your beliefs.
-
-// ---
-
-// Feel free to customize and refine the copy to better align with your app's specific features, mission, and audience. This draft aims to highlight the unique offerings of "Halal Reads and Reels" as a platform dedicated to providing Islamic movie and book reviews while fostering a vibrant community centered around halal entertainment.
