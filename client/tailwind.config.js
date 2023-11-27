@@ -1,5 +1,6 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 /** @type {import('tailwindcss').Config} */
+<<<<<<< HEAD
 // eslint-disable-next-line no-undef
 module.exports = {
 	content: [
@@ -61,3 +62,47 @@ module.exports = {
 
     
 };
+=======
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Roboto'],
+        serif: ['Merriweather', 'serif'],
+      },
+      colors: {
+        'black': '#0A0F13',
+        'pink': '#E31C5F',
+        'gray': '#707070',
+        'white': '#FFFFFF',
+      },
+      borderProperty: {
+        'border': '1px solid '
+      },
+      serif: ['Roboto', 'sans-serif'],
+      sans: ['Didact Gothic', 'sans-serif'],
+      colors: {
+        primary: '#E31C5F',
+        black: {
+          100: '#1A252F',
+          200: '#0A0F13',
+        },
+        white: '#FFFFFF',
+        grey: '#707070',
+        gray: '#33373A',
+        pink: '#EF709A',
+      },
+      extend: {
+        boxShadow: {
+          xl: '1px 2px 8px 0px #ADAFB0',
+        }
+      },
+    },
+  },
+  plugins: [],
+}
+>>>>>>> 2de825a8589f4a3fc552e39e639a3a2e5af954da
