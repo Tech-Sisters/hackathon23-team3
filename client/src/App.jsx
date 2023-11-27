@@ -2,7 +2,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/landing';
-import SubscriptionPage from './pages/subscription';
+import Login from './pages/login';
+import Signup from './pages/signup';
+import User from './pages/UserProfile';
 
 
 
@@ -14,9 +16,17 @@ function App() {
 			element: <LandingPage />
 		},
 		{
-			path: '/subcriptionPage',
-			element: <SubscriptionPage />
+			path: '/login',
+			element: <Login />
 		},
+		{
+			path: '/signup',
+			element: <Signup />
+		},
+		{
+			path: '/user-profile',
+			element: <User />
+		}
 		
 
 		

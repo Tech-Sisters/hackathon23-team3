@@ -1,14 +1,14 @@
-const MoviesModel = require("../model/Movies.model");
+const BooksModel = require("../model/Books.model");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
 exports.getAll = async (req, res) => {
   const { page = 1, limit = 10 } = req.query;
-  const total = await MoviesModel.find().countDocuments();
-  await MoviesModel.aggregate(
+  const total = await BooksModel.find().countDocuments();
+  await BooksModel.aggregate(
     [
-      { 
-        $sort: {
+      {
+        $sort: { 
           createdAt: -1,
         },
       },
@@ -39,26 +39,26 @@ exports.getAll = async (req, res) => {
 };
 
 exports.searchWithTitle = async (req, res, next) => {
-  const total = await MoviesModel.find({
+  const total = await BooksModel.find({
     title: { $regex: req.body.title, $options: "i" },
   }).countDocuments();
   try {
-    const items = await MoviesModel.find({
+    const items = await BooksModel.find({
       title: { $regex: req.body.title, $options: "i" },
     });
-    res.json({ status: 200, total, message: "Filtered movies", items });
+    res.json({ status: 200, total, message: "Filtered books", items });
   } catch (error) {
     next({ status: 404, message: error });
   }
 };
 
 exports.create = async (req, res) => {
-  await MoviesModel.findOne({ title: req.body.title }, async (err, result) => {
+  await BooksModel.findOne({ title: req.body.title }, async (err, result) => {
     if (result)
-      res.json({ status: 409, message: "Movie with the same title exists" });
+      res.json({ status: 409, message: "Book with the same title exists" });
 
     if (result === null) {
-      const newMovie = await new MoviesModel({
+      const newBook = await new BooksModel({
         image_url: req.body.image_url,
         title: req.body.title,
         description: req.body.description,
@@ -66,11 +66,11 @@ exports.create = async (req, res) => {
         kid_friendly: req.body.kid_friendly,
       });
 
-      await newMovie
+      await newBook
         .save()
         .then(
           async (data) =>
-            await MoviesModel.aggregate(
+            await BooksModel.aggregate(
               [
                 {
                   $match: { _id: mongoose.Types.ObjectId(data._id) },
@@ -96,8 +96,8 @@ exports.create = async (req, res) => {
     }
   });
 };
-exports.getSingleMovie = async (req, res) => {
-  await MoviesModel.aggregate(
+exports.getSingleBook = async (req, res) => {
+  await BooksModel.aggregate(
     [
       {
         $match: { _id: mongoose.Types.ObjectId(req.params.id) },
@@ -121,14 +121,14 @@ exports.getSingleMovie = async (req, res) => {
   );
 };
 
-exports.updateSingleMovie = async (req, res) => {
-	await MoviesModel.findByIdAndUpdate({ _id: req.params.id }, { $set: req.body })
-	.then((data) => res.json({ message: 'Successfully updated', data }))
-	.catch((err) => res.json({ message: err }));
+exports.updateSingleBook = async (req, res) => {
+  await BooksModel.findByIdAndUpdate({ _id: req.params.id }, { $set: req.body })
+    .then((data) => res.json({ message: "Successfully updated", data }))
+    .catch((err) => res.json({ message: err }));
 };
 
-exports.removeSingleMovie = async (req, res) => {
-  await MoviesModel.findByIdAndDelete({ _id: req.params.id })
+exports.removeSingleBook = async (req, res) => {
+  await BooksModel.findByIdAndDelete({ _id: req.params.id })
     .then((data) => res.json(data))
     .catch((err) => res.json({ message: err }));
 };
