@@ -10,7 +10,7 @@ import StarRating from "../../components/starRating";
 import { MdEdit } from "react-icons/md";
 import Dropdown from "../../components/dropdown";
 
-const User = () => {
+const User = () => { 
   const [movieRatings, setMovieRatings] = useState({});
 
   const handleRatingChange = (movieId, newRating) => {
