@@ -2,6 +2,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/landing';
+import SubscriptionPage from './pages/subscription';
 
 
 
@@ -11,6 +12,10 @@ function App() {
 		{
 			path: '/',
 			element: <LandingPage />
+		},
+		{
+			path: '/subcriptionPage',
+			element: <SubscriptionPage />
 		},
 		
 
