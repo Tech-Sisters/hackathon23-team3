@@ -14,14 +14,14 @@ const Plan = ({ title }) => {
   );
 };
 
-const PricingCard = ({ name, title, price, btnText, trail }) => {
+const PricingCard = ({ name, title, price, btnText, trial }) => {
   return (
     <div className="mx-2 md:mx-3 cursor-pointer p-10 transition-all hover:shadow-lg flex flex-col gap-12 rounded-3xl border-neutral-200 border">
       <div className="flex flex-col gap-3">
         <h2 className="text-xl font-semibold capitalize">{name}</h2>
         <span className="text-neutral-500 text-sm font-light">{title}</span>
       </div>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col font-medium text-black-200 gap-5">
         <Plan title="Ad-free experience" />
         <Plan title="Unlimited user interaction" />
         <Plan title="User profile customization" />
@@ -38,7 +38,7 @@ const PricingCard = ({ name, title, price, btnText, trail }) => {
           {btnText}
         </button>
         <span className="block text-pink mt-5 font-semibold animate__animated animate__shakeX cursor-pointer">
-          {trail}
+          {trial}
         </span>
       </div>
     </div>
@@ -49,14 +49,14 @@ function Pricing() {
   const [plan, setPlan] = useState("Monthly Plan");
   return (
     <section
-      className="relative md:container bg-dark text-offwhite mx-auto px-5 md:px-16 flex flex-col gap-5"
+      className="relative  bg-offwhite text-black-200 mx-auto px-5 md:px-16 flex flex-col gap-5"
       id="pricing"
     >
       <div>
-        <h2 className="title text-center font-extrabold text-3xl py-8">Choose your pricing policy</h2>
+        <h2 className="title text-center text-black-200 font-extrabold text-3xl py-8">Choose your pricing policy</h2>
       </div>
 
-      <div className="relative transition-all flex gap-1 mx-auto w-fit bg-slate-100 p-2 rounded-full">
+      <div className="relative transition-all flex gap-1 mx-auto w-fit bg-black-200 p-2 rounded-full">
         <div
           className={`${
             plan === "Monthly Plan" ? "left-2" : "left-[150px] w-[128px]"
@@ -66,7 +66,7 @@ function Pricing() {
           onClick={() => setPlan("Monthly Plan")}
           className={`
           ${plan === "Monthly Plan" ? "text-white" : "text-pink"}
-          z-[1] capitalize text-base hover:border-2 border-2 border-transparent py-3 px-5 hover:text-hover rounded-full`}
+          z-[1] capitalize text-base hover:border-2 border-2 border-transparent py-3 px-5 hover:text-white rounded-full`}
         >
           Monthly Plan
         </button>
@@ -74,7 +74,7 @@ function Pricing() {
           onClick={() => setPlan("Annual Plan")}
           className={`
           ${plan === "Annual Plan" ? "text-white" : "text-pink"}
-          z-[1] capitalize text-base hover:border-2 border-2 border-transparent py-3 px-5 hover:text-hover rounded-full`}
+          z-[1] capitalize text-base hover:border-2 border-2 border-transparent py-3 px-7 hover:text-white rounded-full`}
         >
           Annual Plan
         </button>
@@ -85,13 +85,13 @@ function Pricing() {
           <PricingCard
             name="Standard Plan"
             price="25"
-            btnText="Start free trail"
+            btnText="Start free trial"
           />
           <PricingCard
             name="Free Plan"
             price="0"
             btnText="Create account"
-            trail="Or Start 14 Days trail"
+            trail="Or Start 14 Days trial"
           />
           <div className="relative">
             <span className="absolute -top-1 left-10 bg-pink text-white px-2 py-1 rounded-md">
@@ -101,7 +101,7 @@ function Pricing() {
               name="Premium Plan"
               price="24"
               btnText="Create account"
-              trail="Or Start 14 Days trail"
+              trail="Or Start 14 Days trial"
             />
           </div>
         </Carousel>
@@ -110,13 +110,13 @@ function Pricing() {
           <PricingCard
             name="Free Plan"
             price="0"
-            btnText="Start free trail"
+            btnText="Start free trial"
           />
           <PricingCard
             name="Standard Plan"
             price="25"
             btnText="Create account"
-            trail="Or Start 10 Days trail"
+            trail="Or Start 10 Days trial"
           />
           <div className="relative">
             <span className="absolute -top-1 left-10 bg-pink text-white px-2 py-1 rounded-md">
@@ -126,7 +126,7 @@ function Pricing() {
               name="Premium Plan"
               price="54"
               btnText="Create account"
-              trail="Or Start 10 Days trail"
+              trail="Or Start 10 Days trial"
             />
           </div>
         </Carousel>

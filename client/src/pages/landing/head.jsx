@@ -16,14 +16,14 @@ function Head() {
                               </Link>
 
                               <nav className="flex shrink items-center text-white space-x-6">
-                                    <Link to="/homepage" className="text-lg hover:text-hover">
+                                    <Link to="/home" className="text-lg hover:text-hover">
                                           Home
                                     </Link>
                                     <Link to="/" className="text-lg hover:text-hover">
                                           About
                                     </Link>
                                     <Link
-                                          to="/subcriptionPage"
+                                          to="/subscribe"
                                           className="text-lg hover:text-hover">
                                           Subscription Plan
                                     </Link>

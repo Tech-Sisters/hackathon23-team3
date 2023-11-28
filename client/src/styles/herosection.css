@@ -1,0 +1,41 @@
+.custom-arrow {
+      display: block;
+      cursor: pointer;
+      position: absolute;
+      color: #ffffff; 
+      z-index: 1;
+      top: 45%;
+      width: 50px;
+      height: 50px;
+      user-select: none;
+}
+
+.custom-prev-arrow{
+      left: 8%;
+}
+
+.custom-next-arrow{
+      right: 8%;
+}
+
+.custom-dots-class {
+      position: absolute;
+      bottom: 60px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+}
+    
+.custom-dots-class li button {
+  width: 10px; 
+  height: 10px; 
+  border-radius: 50%; 
+  background-color: #ffffff; 
+  opacity: 0.7; 
+  transition: opacity 0.3s ease;
+}
+    
+
+.custom-dots-class li.slick-active button {
+      opacity: 1; 
+}

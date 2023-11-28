@@ -8,8 +8,8 @@ import { BsFillSendFill } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="bg-black-200 font-sans h-[90vh] pt-24 pb-12">
-      <div className="flex justify-evenly items-baseline ">
+    <div className="bg-black-200 font-sans h-[100vh] pt-24 pb-12">
+      <div className="flex justify-evenly items-baseline">
         <div className="flex-column">
           <div>
             <img src={Logo} alt="" className="w-[80px] pb-8" />
@@ -52,12 +52,12 @@ const Footer = () => {
         <div>
           <ul className="font-sans text-sm">
             <li className="text-white pb-2 font-bold">COMPANY</li>
-            <li className="text-white pb-2 hover:text-hover">About us</li>
-            <li className="text-white pb-2 hover:text-hover">Careers</li>
-            <li className="text-white pb-2 hover:text-hover">Terms</li>
-            <li className="text-white pb-2 hover:text-hover">Privacy</li>
-            <li className="text-white pb-2 hover:text-hover">Help</li>
-            <Link to="" className="text-white hover:text-hover">FAQ</Link>
+            <li className="text-white pb-2 hover:text-hover cursor-pointer">About us</li>
+            <li className="text-white pb-2 hover:text-hover cursor-pointer">Careers</li>
+            <li className="text-white pb-2 hover:text-hover cursor-pointer">Terms</li>
+            <li className="text-white pb-2 hover:text-hover cursor-pointer">Privacy</li>
+            <li className="text-white pb-2 hover:text-hover cursor-pointer">Help</li>
+            <Link to="/FAQ" className="text-white hover:text-hover cursor-pointer">FAQ</Link>
           </ul>
         </div>
 
