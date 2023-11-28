@@ -1,0 +1,33 @@
+/* Dropdown.css */
+
+.custom-dropdown {
+   width: 200px;
+ }
+ 
+ .dropdown-options {
+   top: 100%;
+   left: 0;
+   z-index: 1000;
+   display: block;
+   position: absolute;
+   min-width: 160px;
+   padding: 8px 0;
+   margin: 2px 0 0;
+   font-size: 14px;
+   text-align: left;
+   list-style: none;
+   background-color: #fff;
+   background-clip: padding-box;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+ }
+ 
+ .option {
+   transition: background-color 0.3s;
+ }
+ 
+ .option:hover {
+   background-color: #f5f5f5;
+ }
+ 

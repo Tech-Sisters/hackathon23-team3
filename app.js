@@ -5,7 +5,6 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const upload = require("express-fileupload");
 const cors = require("cors");
-const formData = require('express-form-data');
 
 //ROUTES
 var indexRouter = require("./routes/index");
@@ -13,16 +12,12 @@ var usersRouter = require("./routes/users.routes");
 var awsRouer = require("./routes/aws.routes");
 var moviesRouter = require("./routes/movies.routes");
 var favoriteMoviesRouter = require("./routes/favoriteMovies.routes");
-var booksRouter = require("./routes/books.routes");
-var favoriteBooksRouter = require("./routes/favoriteBooks.routes");
-var commentsRouter = require("./routes/comments.routes");
 
 //middlewares
 const verifyToken = require("./auth/verifyToken");
 // const isAdmin = require('./auth/isAdmin');
 
 var app = express();
-app.use(formData.parse());
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -53,9 +48,6 @@ app.use("/", usersRouter);
 app.use("/", awsRouer);
 app.use("/", moviesRouter);
 app.use("/", favoriteMoviesRouter);
-app.use("/", booksRouter);
-app.use("/", favoriteBooksRouter);
-app.use("/", commentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

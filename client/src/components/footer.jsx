@@ -1,21 +1,22 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable no-unused-vars */
 import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.svg";
-import Facebook from "../assets/Facebook.svg";
-import Instagram from "../assets/Instagram.svg";
-import LinkedIn from "../assets/LinkedIn.svg";
-import SendIcon from "../assets/send-icon.svg";
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { BsFillSendFill } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="bg-black font-sans pt-12 pb-12">
-      <div className="flex justify-evenly items-baseline ">
+    <div className="bg-black-200 font-sans h-[100vh] pt-24 pb-12">
+      <div className="flex justify-evenly items-baseline">
         <div className="flex-column">
           <div>
-            <img src={Logo} alt="" className="w-14 pb-8" />
+            <img src={Logo} alt="" className="w-[80px] pb-8" />
           </div>
 
           <div className="">
-            <p className="text-white w-96 text-sm leading-10 pb-8">
+            <p className="text-white font-medium w-96 text-sm leading-6 pb-8">
               Halal Reads ‘n’ Reels" is a dynamic and inclusive movie and book
               review web app tailored for those seeking entertainment aligned
               with Halal principles. Our platform provides a curated selection
@@ -25,9 +26,10 @@ const Footer = () => {
           </div>
           <div className="flex items-center justify-between">
             <div className="flex">
-              <img src={Facebook} alt="" className="w-8 mr-2" />
-              <img src={Instagram} alt="" className="w-8 mr-2" />
-              <img src={LinkedIn} alt="" className="w-8 mr-2" />
+              <FaFacebook className="text-white text-2xl mr-2" /> 
+              <FaInstagram className="text-white text-2xl mr-2" /> 
+              <FaLinkedin className="text-white text-2xl mr-2" /> 
+
             </div>
             <div className="flex items-center justify-between ml-20">
               <div>
@@ -40,7 +42,7 @@ const Footer = () => {
                   placeholder="Add email to get started"
                 />
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <img src={SendIcon} alt="" className="w-6" />
+                  <BsFillSendFill className="w-6 text-pink" />
                 </div>
               </div>
             </div>
@@ -49,22 +51,22 @@ const Footer = () => {
 
         <div>
           <ul className="font-sans text-sm">
-            <li className="text-white pb-2">COMPANY</li>
-            <li className="text-pink pb-2">About us</li>
-            <li className="text-white pb-2">Careers</li>
-            <li className="text-white pb-2">Terms</li>
-            <li className="text-white pb-2">Privacy</li>
-            <li className="text-white pb-2">Help</li>
-            <li className="text-white">FAQ</li>
+            <li className="text-white pb-2 font-bold">COMPANY</li>
+            <li className="text-white pb-2 hover:text-hover cursor-pointer">About us</li>
+            <li className="text-white pb-2 hover:text-hover cursor-pointer">Careers</li>
+            <li className="text-white pb-2 hover:text-hover cursor-pointer">Terms</li>
+            <li className="text-white pb-2 hover:text-hover cursor-pointer">Privacy</li>
+            <li className="text-white pb-2 hover:text-hover cursor-pointer">Help</li>
+            <Link to="/FAQ" className="text-white hover:text-hover cursor-pointer">FAQ</Link>
           </ul>
         </div>
 
         <div>
           <ul className="font-sans text-sm text-white">
-            <li className="pb-2">WORK WITH US</li>
-            <li className="pb-2">Advertise</li>
-            <li className="pb-2">Ad Blog</li>
-            <li className="">Partnership</li>
+            <li className="pb-2 hover:text-hover font-bold">WORK WITH US</li>
+            <li className="pb-2 hover:text-hover">Advertise</li>
+            <li className="pb-2 hover:text-hover">Ad Blog</li>
+            <li className="hover:text-hover">Partnership</li>
           </ul>
         </div>
       </div>
