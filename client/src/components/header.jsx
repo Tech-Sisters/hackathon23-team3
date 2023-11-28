@@ -74,7 +74,7 @@ function Header() {
             <nav className="text-white font-sans w-[90%] mx-auto flex flex-row gap-5 py-4">
                   <Link to="/" className="font-medium text-xl hover:text-hover">Movies</Link>
                   <Link to="/" className="font-medium text-xl hover:text-hover">Books</Link>
-                  <Link to="/" className="font-medium text-xl hover:text-hover">FAQ</Link>
+                  <Link to='/faq' className="font-medium text-xl hover:text-hover">FAQ</Link>
 
             </nav>
         </div>

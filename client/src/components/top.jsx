@@ -5,7 +5,6 @@ import { FaArrowUp } from 'react-icons/fa';
 const GoToTopButton = () => {
   const [showButton, setShowButton] = useState(false);
 
-  // Function to scroll to the top of the page
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -13,9 +12,8 @@ const GoToTopButton = () => {
     });
   };
 
-  // Event listener to show/hide the button based on scroll position
   window.onscroll = () => {
-    if (window.pageYOffset > 300) {
+    if (window.scrollY > 300) {
       setShowButton(true);
     } else {
       setShowButton(false);

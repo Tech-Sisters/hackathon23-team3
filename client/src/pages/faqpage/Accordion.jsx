@@ -34,7 +34,7 @@ const Accordion = ({ title, answer }) => {
             }`}
           />
         </svg>
-        <span className="font-serif ml-12">{title}</span>
+        <span className="font-serif text-black-200 ml-6 px-2">{title}</span>
         {/* {accordionOpen ? <span>-</span> : <span>+</span>} */}
       </button>
       <div

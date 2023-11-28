@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../components/header";
-import Accordion from "../FAQ/Accordion";
+import Accordion from "./Accordion";
 import Footer from "../../components/footer";
 
 const Faq = () => {
@@ -8,7 +8,7 @@ const Faq = () => {
     <div>
       <Header />
       <div className="mb-8">
-        <h2 className="text-black font-serif py-[40px] font-bold text-[20px] text-center">
+        <h2 className="text-black-200 text-4xl py-[40px] font-bold text-[20px] text-center">
           Frequently Asked Questions
         </h2>
         <Accordion

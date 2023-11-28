@@ -1,28 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.svg";
-// import Top from '../components/top';
+import Top from '../components/top';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
-  const [showButton, setShowButton] = useState(false);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
-  window.onscroll = () => {
-    if (window.scrollY > 300) {
-      setShowButton(true);
-    } else {
-      setShowButton(false);
-    }
-  };
 
   return (
     <div className="bg-black-200 font-sans h-[90vh] pt-24">
@@ -70,13 +54,7 @@ const Footer = () => {
             <li className="pb-2 hover:text-hover">Advertise</li>
             <li className="pb-2 hover:text-hover">Ad Blog</li>
             <li className="hover:text-hover">Partnership</li>
-            <div>
-              {showButton && (
-                <button onClick={scrollToTop} className="hover:text-hover mt-8 text-pink">
-                Subscribe to Newsletter                
-                </button>
-              )}
-            </div>
+            
           </ul>
         </div>
       </div>
@@ -85,9 +63,9 @@ const Footer = () => {
           @HalalReadsnReels 2023
         </p>
       </div>
-      {/* <div>
+      <div className="float-right mr-8">
          <Top />
-      </div> */}
+      </div>
     </div>
   );
 };
