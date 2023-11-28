@@ -12,7 +12,7 @@ function App() {
 	const routes = [
 		{
 			path: '/',
-			element: <Header/>
+			element: <LandingPage/>
 		},
 		
 
