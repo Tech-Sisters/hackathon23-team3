@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/landing';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/signup';
-import User from './pages/UserProfile/User';
+import User from './pages/UserProfile/user';
 import HomePage from './pages/homepage';
 import SubscriptionPage from './pages/subscription';
 

@@ -1,12 +1,29 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.svg";
+// import Top from '../components/top';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { BsFillSendFill } from "react-icons/bs";
 
 const Footer = () => {
+  const [showButton, setShowButton] = useState(false);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  window.onscroll = () => {
+    if (window.scrollY > 300) {
+      setShowButton(true);
+    } else {
+      setShowButton(false);
+    }
+  };
+
   return (
     <div className="bg-black-200 font-sans h-[90vh] pt-24">
       <div className="flex justify-evenly items-baseline">
@@ -31,21 +48,7 @@ const Footer = () => {
               <FaLinkedin className="text-white text-2xl mr-2" /> 
 
             </div>
-            <div className="flex items-center justify-between ml-20">
-              <div>
-                <p className="text-white">Subscribe to our newsletter</p>
-              </div>
-              <div className="relative">
-                <input
-                  type="text"
-                  className="bg-transparent w-50 text-sm p-auto"
-                  placeholder="Add email to get started"
-                />
-                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <BsFillSendFill className="w-6 text-pink" />
-                </div>
-              </div>
-            </div>
+           
           </div>
         </div>
 
@@ -62,11 +65,18 @@ const Footer = () => {
         </div>
 
         <div>
-          <ul className="font-sans text-sm text-white">
+          <ul className="font-sans text-sm cursor-pointer text-white">
             <li className="pb-2 hover:text-hover font-bold">WORK WITH US</li>
             <li className="pb-2 hover:text-hover">Advertise</li>
             <li className="pb-2 hover:text-hover">Ad Blog</li>
             <li className="hover:text-hover">Partnership</li>
+            <div>
+              {showButton && (
+                <button onClick={scrollToTop} className="hover:text-hover mt-8 text-pink">
+                Subscribe to Newsletter                
+                </button>
+              )}
+            </div>
           </ul>
         </div>
       </div>
@@ -75,6 +85,9 @@ const Footer = () => {
           @HalalReadsnReels 2023
         </p>
       </div>
+      {/* <div>
+         <Top />
+      </div> */}
     </div>
   );
 };

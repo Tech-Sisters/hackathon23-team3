@@ -62,7 +62,7 @@ const HeroSlider = () => {
 
      <>  
          
-         <Slider {...settings} className="h-[80vh]">
+         <Slider {...settings} className="h-[90vh]">
               <Link to="/" className="brightness-50">
                     <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
               </Link>

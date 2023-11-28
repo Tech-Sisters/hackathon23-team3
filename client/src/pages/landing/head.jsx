@@ -29,7 +29,7 @@ function Head() {
                                     </Link>
                               </nav>
 
-                              <Link to="/login" className="button bg-pink text-white py-1 px-4 rounded hover:bg-opacity-90 transition duration-300">
+                              <Link to="/login" className="button bg-pink text-white py-1  px-6 rounded hover:bg-opacity-90 transition duration-300">
                                     Login
                               </Link>
                         </div>
