@@ -63,23 +63,23 @@ const HeroSlider = () => {
      <>  
          
          <Slider {...settings} className="h-[80vh]">
-              <Link to="/" className="brightness-50 bg-pink">
-                    <img src={bgimage} alt="" className="bg-cover bg-center w-[100%]" />
+              <Link to="/" className="brightness-50">
+                    <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
               </Link>
              
               <Link to="/" className="brightness-50">
-                    <img src={bgimage} alt="" className="bg-cover bg-center w-[100%]" />
+                    <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
               </Link>
              
               <Link to="/" className="brightness-50">
-                    <img src={bgimage} alt="" className="bg-cover bg-center w-[100%]" />
+                    <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
               </Link>
              
               <Link to="/" className="brightness-50">
-                    <img src={bgimage} alt="" className="bg-cover bg-center w-[100%]" />
+                    <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
               </Link>
               <Link to="/" className="brightness-50">
-                    <img src={bgimage} alt="" className="bg-cover bg-center  w-[100%]" />
+                    <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
               </Link>
               
              
