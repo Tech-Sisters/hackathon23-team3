@@ -3,7 +3,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import "./StarRating.css";
+import "../styles/StarRating.css";
 import { FaStar } from "react-icons/fa";
 
 const StarRating = ({ movieId, rating, onRatingChange }) => {
