@@ -1,45 +1,86 @@
-import React from "react";
-import Logo from "../assets/Logo.svg";
-import { Link } from "react-router-dom";
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react';
+import axios from 'axios';
+import logo from '../assets/Logo.svg';
+import { Link } from 'react-router-dom';
+import { AiOutlineSearch } from 'react-icons/ai';
 
-const Header = () => {
+function Header() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleSearch = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post(
+        `https://halal-f92e59ea9eb3.herokuapp.com/movies/search`,
+        { q: searchQuery }
+      );
+      setSearchResults(response.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
   return (
-    <div className="w-full">
-      <div className="flex w-full py-3.5 pl-20">
-        <div className="">
-          <img src={Logo} alt="" className="w-16" />
+    <>
+      <div className="fixed z-50 w-full h-auto bg-white">
+        <div className="flex items-center justify-between w-[90%] mx-auto py-3">
+          <div className="">
+            <Link to="/">
+              <img
+                src={logo}
+                alt="Halal ReadsnReels Official brand logo"
+                className="brandLogo"
+              />
+            </Link>
+          </div>
+
+          <div className="flex right-[19%] relative border border-gray-800 rounded-full w-[40%]">
+            <form action="" className="">
+              <div className="flex items-center pl-4">
+                <AiOutlineSearch className="text-2xl font-medium text-[#34495E]" />
+
+                <input
+                  type="search"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search for Movie, Books and more..."
+                  className="text-black-200 p-2 w-[350px] outline-none"
+                />
+              </div>
+              
+            </form>
+
+            <ul className="absolute bg-white mt-11 max-h-50 overflow-y-auto list-item">
+              {searchResults.map((product) => (
+                <li key={product.id} className="p-2 list">
+                  <Link to="/products" className="">
+                    {product.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+            <div>
+            <Link to="/login" className="button bg-pink text-white py-1 px-4 rounded hover:bg-opacity-90 transition duration-300">
+                  Login
+            </Link>          
+            </div>
         </div>
-        <div>
-          <input
-            placeholder="Search for Movies, Books, and more... "
-            className="ml-24 mr-48 font-serif h-10 bg-gray-50 border border-[#1A252F] text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-[#1A252F] block w-11/12 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          >
-          </input>
-        </div>
-        <div>
-          <button
-            type="button"
-            className="font-serif font-normal ml-[280px] text-white bg-pink hover:bg-black focus:ring-4 focus:ring-blue-300 font-medium rounded-[4px] text-sm px-8 py-3 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-          >
-            Login
-          </button>
-          <button
-            type="button"
-            className="font-serif font-normal ml-[20px] text-white bg-black hover:bg-black focus:ring-4 focus:ring-blue-300 font-medium rounded-[4px] text-sm px-8 py-3 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-          >
-            Sign up
-          </button>
+        <div className="bg-black-200">
+            
+            <nav className="text-white font-sans w-[90%] mx-auto flex flex-row gap-5 py-4">
+                  <Link to="/" className="font-medium text-xl hover:text-hover">Movies</Link>
+                  <Link to="/" className="font-medium text-xl hover:text-hover">Books</Link>
+                  <Link to="/" className="font-medium text-xl hover:text-hover">FAQ</Link>
+
+            </nav>
         </div>
       </div>
-      <div className="bg-black w-full">
-        <div className="font-serif pl-20 py-3.5">
-          <Link to="https://www.google.com" className="text-white pr-[40px] active:text-link-pink">Movies</Link>
-          <Link to="https://www.google.com" className="text-white pr-[40px] active:text-link-pink">Books</Link>
-          <Link to="https://www.google.com" className="text-white active:text-link-pink">FAQ</Link>
-        </div>
-      </div>
-    </div>
+    </>
   );
-};
+}
 
 export default Header;

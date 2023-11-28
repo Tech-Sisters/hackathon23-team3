@@ -1,0 +1,6 @@
+.review {
+      box-shadow: 0 4px 8px 8px rgba(14, 13, 13, 0.1); /* Change the values to adjust the shadow */
+      width: 320px;
+      border-radius: 8px;
+}
+    
