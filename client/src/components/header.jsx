@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../assets/Logo.svg";
 import { Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -35,7 +36,7 @@ const Header = () => {
         <div className="font-serif pl-20 py-3.5">
           <Link to="https://www.google.com" className="text-white pr-[40px] active:text-link-pink">Movies</Link>
           <Link to="https://www.google.com" className="text-white pr-[40px] active:text-link-pink">Books</Link>
-          <Link to="https://www.google.com" className="text-white active:text-link-pink">FAQ</Link>
+          <Link to={"https://www.google.com"} className="text-white active:text-link-pink">FAQ</Link>
         </div>
       </div>
     </div>

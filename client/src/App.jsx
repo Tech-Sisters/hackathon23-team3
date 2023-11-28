@@ -5,6 +5,7 @@ import LandingPage from "./pages/landing";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import Faq from "./pages/FAQ/faq";
+import ReviewEdit from "./pages/Review/ReviewEdit";
 
 function App() {
   const routes = [
