@@ -8,7 +8,7 @@ import { BsFillSendFill } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="bg-black-200 font-sans h-[100vh] pt-24 pb-12">
+    <div className="bg-black-200 font-sans h-[90vh] pt-24">
       <div className="flex justify-evenly items-baseline">
         <div className="flex-column">
           <div>
@@ -57,7 +57,7 @@ const Footer = () => {
             <li className="text-white pb-2 hover:text-hover cursor-pointer">Terms</li>
             <li className="text-white pb-2 hover:text-hover cursor-pointer">Privacy</li>
             <li className="text-white pb-2 hover:text-hover cursor-pointer">Help</li>
-            <Link to="/FAQ" className="text-white hover:text-hover cursor-pointer">FAQ</Link>
+            <Link to='/FAQ' className="text-white hover:text-hover cursor-pointer">FAQ</Link>
           </ul>
         </div>
 

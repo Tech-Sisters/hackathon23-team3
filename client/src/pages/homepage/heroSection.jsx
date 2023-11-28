@@ -4,11 +4,10 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import bgImage from '../../assets/bilal.jpg';
-import Navbar from '../../components/Navbar';
-import FooterPage from '../../components/footer';
+import bgimage from '../../assets/bilal.jpg';
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import '../../styles/herosection.css';
+import { Link } from 'react-router-dom';
 
 
 const CustomPrevArrow = (props) => (
@@ -60,34 +59,32 @@ const HeroSlider = () => {
   };
 
   return (
-     <>  <Navbar />
-         <Slider {...settings} className="h-auto overflow-x-hidden">
-              <div className="brightness-50">
-                    <img src={bgImage} alt="" className="bg-cover bg-center bg-no-repeat  h-auto w-[100%]" />
-              </div>
-              <div className="brightness-50">
-                    <img src={bgImage} alt="" className="bg-cover bg-center bg-no-repeat h-auto w-[100%]" />
-              </div>
-              <div className="brightness-50">
-                    <img src={bgImage} alt="" className="bg-cover bg-center bg-no-repeat w-[100%] h-auto" />
-              </div>
-              <div className="brightness-50">
-                    <img src={bgImage} alt="" className="bg-cover bg-center bg-no-repeat  h-auto w-[100%]" />
-              </div>
-              <div className="brightness-50">
-                    <img src={bgImage} alt="" className="bg-cover bg-center bg-no-repeat  h-auto w-[100%]" />
-              </div>
-              <div className="brightness-50">
-                    <img src={bgImage} alt="" className="bg-cover bg-center bg-no-repeat  h-auto w-[100%]" />
-              </div>
-              <div className="brightness-50">
-                    <img src={bgImage} alt="" className="bg-cover bg-center bg-no-repeat  h-auto w-[100%]" />
-              </div>
-              <div className="brightness-50">
-                    <img src={bgImage} alt="" className="bg-cover bg-center bg-no-repeat  h-auto w-[100%]" />
-              </div>
+
+     <>  
+         
+         <Slider {...settings} className="h-[100vh]">
+              <Link to="/" className="brightness-50 block mt-24">
+                    <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
+              </Link>
+             
+              <Link to="/" className="brightness-50 block mt-24">
+                    <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
+              </Link>
+             
+              <Link to="/" className="brightness-50 block mt-24">
+                    <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
+              </Link>
+             
+              <Link to="/" className="brightness-50 block mt-24">
+                    <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
+              </Link>
+              <Link to="/" className="brightness-50 block mt-24">
+                    <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
+              </Link>
+              
+             
+              
             </Slider>
-            <FooterPage />
 
       </>
   );

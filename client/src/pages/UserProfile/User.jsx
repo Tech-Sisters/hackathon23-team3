@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import Navbar from "../../components/Navbar";
 import image from "../../assets/Ellipse16.png";
 import { Link } from "react-router-dom";
 import bilal from "../../assets/bilal.png";
@@ -34,7 +33,6 @@ const User = () => {
 
   return (
     <div className="bg-pink">
-      <Navbar />
 
       <div className="flex flex-row gap-4 md:px-20 p-10 py-10">
         <div className="bg-white flex flex-col gap-4 w-[300px] h-auto p-5">

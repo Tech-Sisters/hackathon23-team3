@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Logo.svg";
-// import Navbar from "../../components/Navbar";
+import Header from '../../components/header';
 import Footer from "../../components/footer";
 
 const Login = () => {
@@ -11,10 +11,11 @@ const Login = () => {
     // Handle form submission logic here
   };
   return (
-    <><div className="font-serif py-8 h-auto">
-      {/* <Navbar /> */}
+    <>
+      <Header />
+      <div className="font-serif  bg-offwhite py-24">
 
-      <div className="w-[40%] drop-shadow-lg  rounded-md mx-auto bg-white p-10 flex flex-col gap-8">
+      <div className="w-[40%] drop-shadow-lg rounded-md mx-auto bg-white p-10 flex flex-col gap-8 mt-20">
         <h4 className="text-center text-3xl text-black-200 font-extrabold">
           Login to continue
         </h4>

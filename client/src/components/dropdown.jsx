@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './Dropdown.css';
+import '../styles/Dropdown.css';
 
 const Dropdown = ({ options, defaultOption, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
