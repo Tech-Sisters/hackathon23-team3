@@ -13,14 +13,14 @@ const Login = () => {
   return (
     <>
       <Header />
-      <div className="font-serif  bg-offwhite py-24">
+      <div className="font-serif  bg-offwhite py-8">
 
-      <div className="w-[40%] drop-shadow-lg rounded-md mx-auto bg-white p-10 flex flex-col gap-8 mt-20">
+      <div className="w-[40%] drop-shadow-lg rounded-md mx-auto bg-white p-10 flex flex-col gap-8">
         <h4 className="text-center text-3xl text-black-200 font-extrabold">
           Login to continue
         </h4>
 
-        <form onSubmit={handleSubmit} className=" flex flex-col gap-5 mt-8">
+        <form onSubmit={handleSubmit} className=" flex flex-col gap-5 mt-2">
           <label htmlFor="" className="font-normal text-md text-text">
             Enter email <span className="text-pink">*</span>
           </label>
