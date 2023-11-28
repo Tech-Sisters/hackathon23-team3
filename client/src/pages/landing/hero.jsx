@@ -27,7 +27,7 @@ function Hero() {
           </div>
           
 
-          <div className="bg-offwhite z-40 contain">
+          <div className="bg-offwhite contain">
             <div className="flex items-center justify-center">
               <h2 className="text-2xl text-black-200 font-bold text-center">Sign up for our newsletter</h2>
               <p className="animate__animated animate__tada animate__delay-1s animate__infinite text-2xl">👋</p>
