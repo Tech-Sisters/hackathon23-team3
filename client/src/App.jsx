@@ -8,9 +8,9 @@ import User from './pages/userprofile/user';
 import HomePage from './pages/homepage';
 import SubscriptionPage from './pages/subscription';
 import Faq from './pages/faqpage/faq';
-
-
-
+import Footer from "./components/footer";
+import Header from "./components/header";
+import ReviewEdit from "./pages/Review/ReviewEdit";
 
 function App() {
 	const routes = [
