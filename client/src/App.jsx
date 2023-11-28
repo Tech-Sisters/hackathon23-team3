@@ -7,6 +7,7 @@ import Signup from './pages/signup/signup';
 import User from './pages/UserProfile/user';
 import HomePage from './pages/homepage';
 import SubscriptionPage from './pages/subscription';
+import Faq from "./pages/FAQ/faq";
 
 
 

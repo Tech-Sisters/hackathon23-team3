@@ -1,5 +1,8 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 /** @type {import('tailwindcss').Config} */
+<<<<<<< HEAD
+
+=======
 // eslint-disable-next-line no-undef
 module.exports = {
 	content: [
@@ -61,6 +64,7 @@ module.exports = {
 
     
 };
+>>>>>>> 922662be1afb65f99da54a0700ed8faf8adddc73
 export default {
   content: [
     "./index.html",
@@ -83,6 +87,7 @@ export default {
     },
     extend: {},
   },
+
   plugins: [],
 }
 
