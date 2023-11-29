@@ -44,7 +44,7 @@ const Footer = () => {
             <li className="text-white pb-2 hover:text-hover cursor-pointer">Terms</li>
             <li className="text-white pb-2 hover:text-hover cursor-pointer">Privacy</li>
             <li className="text-white pb-2 hover:text-hover cursor-pointer">Help</li>
-            <Link to='/FAQ' className="text-white hover:text-hover cursor-pointer">FAQ</Link>
+            <Link to="" className="text-white hover:text-hover cursor-pointer">FAQ</Link>
           </ul>
         </div>
 

@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import StarRating from '../../components/starRating';
+import { Link } from 'react-router-dom';
+// import StarRating from '../../components/starRating';
 import '../../styles/movie.css';
 
 const MovieGrid = () => {
   const [movies, setMovies] = useState([]);
 
+
   useEffect(() => {
 
-      axios.get("https://halal-f92e59ea9eb3.herokuapp.com/movies")
+      axios.get(`https://halal-f92e59ea9eb3.herokuapp.com/movies`)
         .then(response => {
           setMovies(response.data.items || []);
         })
@@ -26,18 +28,21 @@ const MovieGrid = () => {
            
            <div className="movie-grid w-[90%] mx-auto">
                   {movies.map((movie) => (
-                        <div key={movie.id}>
+                      <div key={movie.id}>
+                            <Link to={`/movies/${movie.id}`}>
+
                               <img src={movie.image_url} alt={movie.title} className="rounded shadow bg-pink mb-4" />
                               <h3 className="font-semibold text-gray mb-4 text-black-200">{movie.title}</h3>
                               <p className="text-gray font-medium text-sm">{movie.description}</p>
                               <div className="py-4">
-                                    <StarRating />
+                              {/* <StarRating /> */}
                               </div>
-                        </div>
+                            </Link>
+                      </div>
                   ))}
            </div>
         </div>
-           
+
       </>
   );
 };

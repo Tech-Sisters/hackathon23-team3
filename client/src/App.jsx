@@ -8,7 +8,8 @@ import User from './pages/userprofile/user';
 import HomePage from './pages/homepage';
 import SubscriptionPage from './pages/subscription';
 import Faq from './pages/faq/faq';
-// import ReviewEdit from "./pages/review/reviewedit";
+import ReviewEdit from "./pages/review/reviewedit";
+import MovieDetails from "./pages/homepage/moviedetails";
 
 function App() {
 	const routes = [
@@ -39,6 +40,14 @@ function App() {
 		{
 			path: '/faq',
 			element: <Faq />
+		},
+		{
+			path: '/reviewedit',
+			element: <ReviewEdit />
+		},
+		{
+			path: '/movies/:id',
+			element: <MovieDetails />
 		}
 		
 		
