@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import img from '../../assets/reviewpage.png';
+import { Link } from 'react-router-dom';
 import '../../styles/section.css';
 
 function Section() {
@@ -15,9 +16,9 @@ function Section() {
               for these content, empowering you to make informed choices that resonate 
               with your beliefs.
             </p>
-            <button className="button cursor-pointer bg-pink text-white py-1 px-4 rounded hover:bg-opacity-90 transition duration-300">
+            <Link to="/login" className="button cursor-pointer bg-pink text-white py-1 px-6 rounded hover:bg-opacity-90 transition duration-300">
               Get started
-            </button>
+            </Link>
           </div>
           <div className="">
             <img src={img} alt="user review" className="review mt-5 mr-24" />

@@ -46,7 +46,7 @@ function Feature() {
             
           
             
-            <button className="button bg-pink text-white py-1 px-4 rounded hover:bg-opacity-90 transition duration-300">
+            <button className="button bg-pink text-white py-1 px-6 rounded hover:bg-opacity-90 transition duration-300">
               Join us
             </button>
           </div>

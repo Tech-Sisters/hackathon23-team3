@@ -1,6 +1,4 @@
 /* eslint-disable no-unused-vars */
-// StarRating.js
-
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "../styles/StarRating.css";

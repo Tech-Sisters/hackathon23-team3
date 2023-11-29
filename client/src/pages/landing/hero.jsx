@@ -21,7 +21,7 @@ function Hero() {
               Your platform for insightful movie and books reviews <span className="break"> guiding you through resonating
               entertainment that</span> align with your faith and principles.
             </p>
-            <Link to="/" className="text-pink">
+            <Link to="/login" className="text-pink">
               <span className="row">Explore with Us<BsArrowRight className="ml-2 text-1xl" /></span>
             </Link>
           </div>

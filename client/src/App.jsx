@@ -2,16 +2,13 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/landing';
-import Footer from './components/footer';
-import Header from './components/header'
 import Login from './pages/login/Login';
-import Signup from './pages/signup/Signup';
-import User from './pages/UserProfile/User';
+import Signup from './pages/signup/signup';
+import User from './pages/userprofile/user';
 import HomePage from './pages/homepage';
 import SubscriptionPage from './pages/subscription';
-
-
-
+import Faq from './pages/faq/faq';
+// import ReviewEdit from "./pages/review/reviewedit";
 
 function App() {
 	const routes = [
@@ -38,6 +35,10 @@ function App() {
 		{
 			path: '/subscribe',
 			element: <SubscriptionPage />
+		},
+		{
+			path: '/faq',
+			element: <Faq />
 		}
 		
 		

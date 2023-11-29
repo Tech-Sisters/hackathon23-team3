@@ -4,23 +4,23 @@
       position: absolute;
       color: #ffffff; 
       z-index: 1;
-      top: 45%;
+      top: 60%;
       width: 50px;
       height: 50px;
       user-select: none;
 }
 
 .custom-prev-arrow{
-      left: 8%;
+      left: 2%;
 }
 
 .custom-next-arrow{
-      right: 8%;
+      right: 2%;
 }
 
 .custom-dots-class {
       position: absolute;
-      bottom: 60px;
+      bottom: 30px;
       width: 100%;
       display: flex;
       justify-content: center;
