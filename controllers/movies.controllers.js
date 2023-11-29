@@ -97,10 +97,10 @@ exports.create = async (req, res) => {
   });
 };
 exports.getSingleMovie = async (req, res) => {
-  if (!ObjectId.isValid(req.params.id)) {
-		res.json({message:"Invalid movie id"})
-		return;
-	  }
+  // if (!ObjectId.isValid(req.params.id)) {
+	// 	res.json({message:"Invalid movie id"})
+	// 	return;
+	//   }
   await MoviesModel.aggregate(
     [
       {
