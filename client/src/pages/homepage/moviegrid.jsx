@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-// import StarRating from '../../components/starRating';
+import StarRating from '../../components/starRating';
 import '../../styles/movie.css';
 
 const MovieGrid = () => {
@@ -35,7 +36,7 @@ const MovieGrid = () => {
                               <h3 className="font-semibold text-gray mb-4 text-black-200">{movie.title}</h3>
                               <p className="text-gray font-medium text-sm">{movie.description}</p>
                               <div className="py-4">
-                              {/* <StarRating /> */}
+                              <StarRating />
                               </div>
                             </Link>
                       </div>
