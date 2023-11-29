@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import axios from 'axios';
@@ -21,6 +22,12 @@ function Header() {
       console.error("Error fetching data:", error);
     }
   };
+=======
+import React from "react";
+import Logo from "../assets/Logo.svg";
+import { Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+>>>>>>> faq-page
 
   return (
     <>
@@ -79,7 +86,18 @@ function Header() {
             </nav>
         </div>
       </div>
+<<<<<<< HEAD
     </>
+=======
+      <div className="bg-black w-full">
+        <div className="font-serif pl-20 py-3.5">
+          <Link to="https://www.google.com" className="text-white pr-[40px] active:text-link-pink">Movies</Link>
+          <Link to="https://www.google.com" className="text-white pr-[40px] active:text-link-pink">Books</Link>
+          <Link to={"https://www.google.com"} className="text-white active:text-link-pink">FAQ</Link>
+        </div>
+      </div>
+    </div>
+>>>>>>> faq-page
   );
 }
 
