@@ -1,6 +1,7 @@
 const BooksModel = require("../model/Books.model");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const ObjectId = mongoose.Types.ObjectId;
 
 exports.getAll = async (req, res) => {
   const { page = 1, limit = 10 } = req.query;
@@ -97,6 +98,10 @@ exports.create = async (req, res) => {
   });
 };
 exports.getSingleBook = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+		res.json({message:"Invalid book id"})
+		return;
+	  }
   await BooksModel.aggregate(
     [
       {
