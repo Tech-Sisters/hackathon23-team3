@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import Header from "../../components/header";
+import Head from "../../components/head";
 import Accordion from "./Accordion";
 import Footer from "../../components/footer";
 
 const Faq = () => {
   return (
     <div>
-      <Header />
+      <Head />
       <div className="mb-8">
         <h2 className="text-black-200 text-4xl py-[40px] font-bold text-[20px] text-center">
           Frequently Asked Questions

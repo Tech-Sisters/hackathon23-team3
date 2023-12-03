@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import bgimage from '../../assets/bilal.jpg';
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import bgimage from "../../assets/bilal.jpg";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
-import '../../styles/herosection.css';
-import { Link } from 'react-router-dom';
+import "../../styles/herosection.css";
+import { Link } from "react-router-dom";
 
 
 const CustomPrevArrow = (props) => (
@@ -63,24 +63,14 @@ const HeroSlider = () => {
      <>  
          
          <Slider {...settings} className="h-[90vh]">
-              <Link to="/" className="brightness-50">
-                    <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
-              </Link>
+              <div className="brightness-50">
+                  <Link to="/" className="">
+                        <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
+                  </Link>
+              </div>
+              
              
-              <Link to="/" className="brightness-50">
-                    <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
-              </Link>
-             
-              <Link to="/" className="brightness-50">
-                    <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
-              </Link>
-             
-              <Link to="/" className="brightness-50">
-                    <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
-              </Link>
-              <Link to="/" className="brightness-50">
-                    <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />
-              </Link>
+              
               
              
               

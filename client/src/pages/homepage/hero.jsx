@@ -6,15 +6,15 @@ import 'animate.css';
 import '../../styles/hero.css';
 
 function Hero() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Handle form submission logic here
+  // };
   return (
     <>
       <section className="gradient bg-dark h-[100vh] pt-24">
         <div className="flex items-center justify-between w-[90%] mx-auto py-24">
-
+            
           <div className="w-[50%]">
             <h1 className="text-4xl text-white font-extrabold pb-4">Discover the exciting world <span className="break">of halaltainment</span></h1>
             <p className="heading heroCopy text-white justify-start font-medium tracking-small pb-5">
@@ -25,13 +25,12 @@ function Hero() {
               <span className="row">Explore with Us<BsArrowRight className="ml-2 text-1xl" /></span>
             </Link>
           </div>
-          
 
-          <div className="bg-offwhite contain">
+          {/* <div className="bg-offwhite contain">
             <div className="flex items-center justify-center">
               <h2 className="text-2xl text-black-200 font-bold text-center">Sign up for our newsletter</h2>
-              <p className="animate__animated animate__tada animate__delay-1s animate__infinite text-2xl">👋</p>
-            </div>
+             <p className="animate__animated animate__tada animate__delay-1s animate__infinite text-2xl">👋</p>
+            </div> 
             
             <form onSubmit={handleSubmit}>
               <div className="">
@@ -66,9 +65,9 @@ function Hero() {
                   Subscribe
                 </button>
               </div>
-            </form>
-          </div>
-          </div>
+            </form> 
+          </div>  */}
+        </div>
       </section>
     </>
   );

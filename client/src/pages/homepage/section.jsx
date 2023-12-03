@@ -7,7 +7,7 @@ import '../../styles/section.css';
 function Section() {
   return (
     <>
-      <section className="bg-offwhite h-[80vh]">
+      <section className="bg-[#f5f5f5] h-[80vh]">
         <div className="flex items-center justify-between mx-auto w-[90%]">
           <div className="w-[50%] py-24">
             <p className="text-4xl text-black-200 font-extrabold pb-4">Thoughtful Reviews</p>
@@ -16,8 +16,8 @@ function Section() {
               for these content, empowering you to make informed choices that resonate 
               with your beliefs.
             </p>
-            <Link to="/login" className="button cursor-pointer bg-pink text-white py-1 px-6 rounded hover:bg-opacity-90 transition duration-300">
-              Get started
+            <Link to="/" className="button cursor-pointer bg-pink text-white py-2 px-6 rounded hover:bg-opacity-90 transition duration-300">
+              Learn more
             </Link>
           </div>
           <div className="">

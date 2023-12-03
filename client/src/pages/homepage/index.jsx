@@ -1,22 +1,21 @@
-/* eslint-disable no-unused-vars */
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
-import HeroSection from '../../pages/homepage/heroSection';
-import Header from '../../components/header';
+import Head from '../../components/head';
+import Hero from '../../pages/homepage/hero';
+import Section from '../../pages/homepage/section';
+import FeaturePage from '../../pages/homepage/features';
 import FooterPage from '../../components/footer';
-import MovieGrid from '../../pages/homepage/moviegrid';
 
-function Home() {
-  return (
-
-    <>
-      <Header />
-      <HeroSection />
-      <MovieGrid />
-      <FooterPage />
-
-    </>
-    
-  );
+function HomePage() {
+      return(
+           <>
+              <Head />
+              <Hero />
+              <Section />
+              <FeaturePage />
+              <FooterPage /> 
+           </>
+      );
 }
 
-export default Home;
+export default HomePage;

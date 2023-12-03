@@ -1,21 +1,21 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import img from '../../assets/Logo.svg';
-import { FaCheckCircle } from 'react-icons/fa';
-import '../../styles/feature.css';
+import React from "react";
+import img from "../../assets/Logo.svg";
+import { Link } from "react-router-dom";
+import { FaCheckCircle } from "react-icons/fa";
+import "../../styles/feature.css";
 
 function Feature() {
   return (
     <>
-      <section className="bg-offwhite h-[80vh]">
+      <section className="bg-[#f5f5f5] h-[80vh]">
         <div className=" flex items-center justify-between mx-auto rounded-md py-10 w-[90%]">
      
           <div className="">
             <img src={img} alt="" className="couple" />
 
           </div>
-          <div className="w-[5
-            0%] py-24">
+          <div className="w-[50%] py-24">
             <p className="text-3xl text-black-200 font-extrabold pb-4">Why Choose Halal Reads and Reels?</p>
             
             <span className="flex items-center pb-3">
@@ -46,9 +46,9 @@ function Feature() {
             
           
             
-            <button className="button bg-pink text-white py-1 px-6 rounded hover:bg-opacity-90 transition duration-300">
+            <Link to="/signup" className="button bg-pink text-white py-1 px-6 rounded hover:bg-opacity-90 transition duration-300">
               Join us
-            </button>
+            </Link>
           </div>
 
 

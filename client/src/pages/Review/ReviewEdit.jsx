@@ -1,13 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import Header from "../../components/header";
+import Head from "../../components/head";
 import Footer from "../../components/footer";
 import React from "react";
 
 const ReviewEdit = () => {
   return (
     <div>
-      <Header />
+      <Head />
       <div className="pl-20 py-[40px] w-[50%]">
         <p className="font-black-200 text-3xl font-bold">Write Your Review</p>
         <p className="text-[0.9em] text-gray font-serif font-medium mt-[20px]">

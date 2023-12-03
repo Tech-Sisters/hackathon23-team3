@@ -1,55 +1,50 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import LandingPage from './pages/landing';
-import Login from './pages/login/Login';
-import Signup from './pages/signup/signup';
-import User from './pages/userprofile/user';
-import HomePage from './pages/homepage';
-import SubscriptionPage from './pages/subscription';
-import Faq from './pages/faq/faq';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import MoviePage from "./pages/moviepage";
+import BookPage from "./pages/bookpage";
+import User from "./pages/userprofile/user";
+import HomePage from "./pages/homepage";
+import SubscriptionPage from "./pages/subscription";
+import Faq from "./pages/faq/faq";
 import ReviewEdit from "./pages/review/reviewedit";
-import MovieDetails from "./pages/homepage/moviedetails";
+import MovieDetails from "./pages/moviepage/moviedetails";
 
 function App() {
 	const routes = [
 		{
-			path: '/',
-			element: <LandingPage/>
-		},
-		{
-			path: '/home',
+			path: "/",
 			element: <HomePage/>
 		},
 		{
-			path: '/login',
-			element: <Login />
+			path: "/movies",
+			element: <MoviePage/>
 		},
 		{
-			path: '/signup',
-			element: <Signup />
+			path: "/books",
+			element: <BookPage/>
 		},
 		{
-			path: '/user-profile',
+			path: "/user-profile",
 			element: <User />
 		},
 		{
-			path: '/subscribe',
+			path: "/subscribe",
 			element: <SubscriptionPage />
 		},
 		{
-			path: '/faq',
+			path: "/faq",
 			element: <Faq />
-		},
+		}, 
 		{
-			path: '/reviewedit',
+			path: "/reviewedit",
 			element: <ReviewEdit />
 		},
 		{
-			path: '/movies/:id',
+			path: "/movies/:id",
 			element: <MovieDetails />
 		}
-		
+
 		
 		
 

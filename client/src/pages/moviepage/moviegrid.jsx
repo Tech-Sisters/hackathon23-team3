@@ -29,11 +29,11 @@ const MovieGrid = () => {
            
            <div className="movie-grid w-[90%] mx-auto">
                   {movies.map((movie) => (
-                      <div key={movie.id}>
-                            <Link to={`/movies/${movie.id}`}>
+                      <div key={movie._id}>
+                            <Link to={`/movies/${movie._id}`}>
 
-                              <img src={movie.image_url} alt={movie.title} className="rounded shadow bg-pink mb-4" />
-                              <h3 className="font-semibold text-gray mb-4 text-black-200">{movie.title}</h3>
+                              <img src={movie.image_url} alt={movie.title} className="rounded shadow mb-4" />
+                              <h3 className="font-semibold mb-4 text-black-200">{movie.title}</h3>
                               <p className="text-gray font-medium text-sm">{movie.description}</p>
                               <div className="py-4">
                               <StarRating />
