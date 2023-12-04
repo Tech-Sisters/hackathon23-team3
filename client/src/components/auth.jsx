@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Modal, TextInput, Checkbox, Label } from "flowbite-react";
 import axios from "axios";
+import { FaCaretDown } from "react-icons/fa";
 
 const AuthenticationModal = () => {
   const [showAuth, setShowAuth] = useState(false);
@@ -12,6 +13,8 @@ const AuthenticationModal = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [avatarUrl, setAvatarUrl] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
+
 
 
   const handleLogin = async (e) => {
@@ -66,99 +69,119 @@ const AuthenticationModal = () => {
 
   return (
     <>
-      {avatarUrl ? (
-        <img src={avatarUrl} alt="Avatar" className="avatar-image w-[30px]" />
-      ) : (
-      <button onClick={() => setShowAuth(true)} className="bg-pink text-white py-1 px-4 rounded font-medium">Login
-      </button>
-      )}
-      <Modal show={showAuth} onClose={() => setShowAuth(false)} className="ml-[46%] w-[50%]">
-        <Modal.Header>
-          {isLogin ? "Login to our platform" : "Create account"}
-        </Modal.Header>
-        <Modal.Body>
-          {isLogin ? (
+      <div className="flex items-center">
 
-            <form onSubmit={handleLogin} className="space-y-3">
-                                        
-            <div>
-              <div className="mb-2 block text-black-200">
-                <Label htmlFor="email" value="emaiil" className="text-md text-black-200 font-medium" />
-              </div>
-            <input
-              id="email"
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="py-1 px-4 w-full rounded border focus:outline-hover" />
-            </div>
-            <div>
-            <div className="mb-2 block text-black-200">
-              <Label htmlFor="password" value="password" className="text-md text-black-200 font-medium" />
-            </div>
-            <input
-              id="password"
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="py-1 px-4 w-full rounded border focus:outline-hover" />
-            </div>
-            <div>
-              <button type="submit" className="bg-pink w-full py-2 mt-3 text-md text-white rounded">Login</button>
-            </div>
-            </form>
-             
-          ) : (
-              <form onSubmit={handleSignup} className="space-y-3">
-                <div>
-                  <div className="mb-2 block text-black-200">
-                    <Label htmlFor="username" value="username" className="text-md text-black-200 font-medium" />
-                  </div>
-                  <input type="text"
-                  id="username"
-                  placeholder="username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  required
-                  className="py-1 px-4 w-full rounded border focus:outline-hover" />
-                </div>
-                <div>
-                  <div className="mb-2 block text-black-200">
-                    <Label htmlFor="email" value="email" className="text-md text-black-200 font-medium" />
-                  </div>
-                  <input id="email" type="email" placeholder="johndoe@gmail.com" className="py-1 px-4 w-full rounded border focus:outline-hover" value={email}
-                  onChange={(e) => setEmail(e.target.value)} required />
-                </div>
-                <div>
-                  <div className="mb-2 block text-black-200">
-                    <Label htmlFor="password" value="password" className="text-md text-black-200 font-medium" />
-                  </div>
-                  <input id="password" type="password" className="py-1 px-4 w-full rounded border focus:outline-hover" value={password}
-                  onChange={(e) => setPassword(e.target.value)} required />
-                </div>
-
-                <div className="">
-                  <button type="submit" className="bg-pink w-full py-2 mt-3 text-md text-white rounded">Create a free account</button>
-                </div>
-
-            </form>
-          )}
-          <div className="flex justify-between text-sm mt-3 font-medium text-gray dark:bg-pink">
+        {avatarUrl ? (
           
-            {isLogin
-              ? "Don’t have an account? "
-              : "Already have an account? "}
-            <button onClick={toggleAuthMode} className="text-pink underline">
-              {isLogin ? "Create account" : "Login"}
-            </button>
+
+          <div className="relative flex flex-row-reverse">
+            <FaCaretDown className="text-white text-2xl cursor-pointer" onClick={() => setMenuOpen(!menuOpen)} />
+
+            <img src={avatarUrl} alt="Avatar" className="avatar-image w-[30px]" />
+
+
+            <div className={`absolute top-14 right-0 bg-white rounded shadow-lg px-4 w-[140px] ${menuOpen ? 'block' : 'hidden'}`}>
+              <ul className="list-none p-0 m-0">
+                <li className="py-2 cursor-pointer hover:bg-gray-100">Profile</li>
+                <li className="py-2 cursor-pointer hover:bg-gray-100">Account</li>
+                <li className="py-2 cursor-pointer hover:bg-gray-100">Logout</li>
+              </ul>
+            </div>
+            
           </div>
           
-        </Modal.Body>
-      </Modal>
+        ) : (
+        <button onClick={() => setShowAuth(true)} className="bg-pink text-white py-1 px-4 rounded font-medium">Login
+        </button>
+        )}
+        <Modal show={showAuth} onClose={() => setShowAuth(false)} className="ml-[46%] w-[50%]">
+          <Modal.Header>
+            {isLogin ? "Login to our platform" : "Create account"}
+          </Modal.Header>
+          <Modal.Body>
+            {isLogin ? (
+
+              <form onSubmit={handleLogin} className="space-y-3">
+                                          
+              <div>
+                <div className="mb-2 block text-black-200">
+                  <Label htmlFor="email" value="emaiil" className="text-md text-black-200 font-medium" />
+                </div>
+              <input
+                id="email"
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="py-1 px-4 w-full rounded border focus:outline-hover" />
+              </div>
+              <div>
+              <div className="mb-2 block text-black-200">
+                <Label htmlFor="password" value="password" className="text-md text-black-200 font-medium" />
+              </div>
+              <input
+                id="password"
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="py-1 px-4 w-full rounded border focus:outline-hover" />
+              </div>
+              <div>
+                <button type="submit" className="bg-pink w-full py-2 mt-3 text-md text-white rounded">Login</button>
+              </div>
+              </form>
+              
+            ) : (
+                <form onSubmit={handleSignup} className="space-y-3">
+                  <div>
+                    <div className="mb-2 block text-black-200">
+                      <Label htmlFor="username" value="username" className="text-md text-black-200 font-medium" />
+                    </div>
+                    <input type="text"
+                    id="username"
+                    placeholder="username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    required
+                    className="py-1 px-4 w-full rounded border focus:outline-hover" />
+                  </div>
+                  <div>
+                    <div className="mb-2 block text-black-200">
+                      <Label htmlFor="email" value="email" className="text-md text-black-200 font-medium" />
+                    </div>
+                    <input id="email" type="email" placeholder="johndoe@gmail.com" className="py-1 px-4 w-full rounded border focus:outline-hover" value={email}
+                    onChange={(e) => setEmail(e.target.value)} required />
+                  </div>
+                  <div>
+                    <div className="mb-2 block text-black-200">
+                      <Label htmlFor="password" value="password" className="text-md text-black-200 font-medium" />
+                    </div>
+                    <input id="password" type="password" className="py-1 px-4 w-full rounded border focus:outline-hover" value={password}
+                    onChange={(e) => setPassword(e.target.value)} required />
+                  </div>
+
+                  <div className="">
+                    <button type="submit" className="bg-pink w-full py-2 mt-3 text-md text-white rounded">Create a free account</button>
+                  </div>
+
+              </form>
+            )}
+            <div className="flex justify-between text-sm mt-3 font-medium text-gray dark:bg-pink">
+            
+              {isLogin
+                ? "Don’t have an account? "
+                : "Already have an account? "}
+              <button onClick={toggleAuthMode} className="text-pink underline">
+                {isLogin ? "Create account" : "Login"}
+              </button>
+            </div>
+            
+          </Modal.Body>
+        </Modal>
+      </div>
     </>
   );
 };
