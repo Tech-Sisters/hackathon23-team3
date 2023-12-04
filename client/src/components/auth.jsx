@@ -74,17 +74,17 @@ const AuthenticationModal = () => {
         {avatarUrl ? (
           
 
-          <div className="relative flex flex-row-reverse">
-            <FaCaretDown className="text-white text-2xl cursor-pointer" onClick={() => setMenuOpen(!menuOpen)} />
+          <div className="relative flex flex-row-reverse items-center">
+            <FaCaretDown className="text-white text-2xl ml-2 cursor-pointer" onClick={() => setMenuOpen(!menuOpen)} />
 
-            <img src={avatarUrl} alt="Avatar" className="avatar-image w-[30px]" />
+            <img src={avatarUrl} alt="Avatar" className="avatar-image w-[36px]" />
 
 
             <div className={`absolute top-14 right-0 bg-white rounded shadow-lg px-4 w-[140px] ${menuOpen ? 'block' : 'hidden'}`}>
               <ul className="list-none p-0 m-0">
-                <li className="py-2 cursor-pointer hover:bg-gray-100">Profile</li>
-                <li className="py-2 cursor-pointer hover:bg-gray-100">Account</li>
-                <li className="py-2 cursor-pointer hover:bg-gray-100">Logout</li>
+                <li className="py-2 font-medium cursor-pointer hover:text-hover">Profile</li>
+                <li className="py-2 font-medium cursor-pointer hover:text-hover">Account</li>
+                <li className="py-2 font-medium cursor-pointer hover:text-hover">Logout</li>
               </ul>
             </div>
             
@@ -94,11 +94,11 @@ const AuthenticationModal = () => {
         <button onClick={() => setShowAuth(true)} className="bg-pink text-white py-1 px-4 rounded font-medium">Login
         </button>
         )}
-        <Modal show={showAuth} onClose={() => setShowAuth(false)} className="ml-[46%] w-[50%]">
+        <Modal show={showAuth} onClose={() => setShowAuth(false)} className="ml-[46%] w-[50%] p-6">
           <Modal.Header>
             {isLogin ? "Login to our platform" : "Create account"}
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className="rounded-lg">
             {isLogin ? (
 
               <form onSubmit={handleLogin} className="space-y-3">
@@ -107,7 +107,7 @@ const AuthenticationModal = () => {
                 <div className="mb-2 block text-black-200">
                   <Label htmlFor="email" value="emaiil" className="text-md text-black-200 font-medium" />
                 </div>
-              <input
+                <input
                 id="email"
                 type="email"
                 placeholder="Email"
