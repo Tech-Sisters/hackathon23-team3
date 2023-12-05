@@ -27,9 +27,18 @@ const Footer = () => {
           </div>
           <div className="flex items-center justify-between">
             <div className="flex">
-              <FaFacebook className="text-white text-2xl mr-2" /> 
-              <FaInstagram className="text-white text-2xl mr-2" /> 
-              <FaLinkedin className="text-white text-2xl mr-2" /> 
+              <Link>
+               <FaFacebook className="text-white text-2xl mr-2" /> 
+
+              </Link>
+              <Link>
+               <FaInstagram className="text-white text-2xl mr-2" /> 
+
+              </Link>
+              <Link>
+               <FaLinkedin className="text-white text-2xl mr-2" /> 
+
+              </Link>
 
             </div>
            

@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import { useState } from 'react';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import ButtonGroup from './buttonGroup';
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import ButtonGroup from "./buttonGroup";
 
 const Plan = ({ title }) => {
   return (
@@ -34,7 +35,7 @@ const PricingCard = ({ name, title, price, btnText, trial }) => {
             /Monthly
           </span>
         </h2>
-        <button className="w-fit capitalize text-base hover:bg-pink hover:shadow-md hover:shadow-hover hover:border-2 border-2 border-transparent py-3 px-6 text-white bg-pink hover:text-white rounded">
+        <button className="w-fit capitalize text-base hover:bg-pink hover:shadow hover:shadow-hover hover:border-2 border-2 border-transparent py-1 px-6 text-white bg-pink hover:text-white rounded">
           {btnText}
         </button>
         <span className="block text-pink mt-5 font-semibold animate__animated animate__shakeX cursor-pointer">
@@ -49,14 +50,23 @@ function Pricing() {
   const [plan, setPlan] = useState("Monthly Plan");
   return (
     <section
-      className="relative bg-offwhite text-black-200 mx-auto px-5 md:px-16 flex flex-col gap-5 pt-24 pb-4"
+      className="relative bg-dark text-black-200 mx-auto px-5 md:px-16 flex flex-col gap-5 pb-4"
       id="pricing"
     >
+      
       <div>
-        <h2 className="title text-center text-black-200 font-extrabold text-3xl py-4">Choose your pricing policy</h2>
+        <div className="relative top-8 right-1">
+          <Link to="/">
+            <p className="text-md underline text-pink">Go back</p>
+
+          </Link>
+        </div>
+        <div>
+          <h2 className="relative left-[34%] font-semibold py-2 text-3xl text-white">Choose your pricing policy</h2>
+        </div>
       </div>
 
-      <div className="relative transition-all flex gap-1 mx-auto w-fit bg-black-200 p-2 rounded-full mb-4">
+      <div className="relative transition-all flex gap-1 mx-auto w-fit border border-white bg-black-200 p-2 rounded-full mb-4">
         <div
           className={`${
             plan === "Monthly Plan" ? "left-2" : "left-[150px] w-[128px]"
