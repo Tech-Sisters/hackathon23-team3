@@ -1,14 +1,13 @@
-
 .star-rating {
-   display: flex;
-   flex-direction: row;
- }
+  display: flex;
+  flex-direction: row;
+}
  
- .star {
-   cursor: pointer;
-   color: #D9D9D9;
- }
+.star {
+  cursor: pointer;
+  color: #E31C5F;
+}
  
- .active {
-   color: #E31C5F;
- }
+.active {
+  color: #E31C5F;
+}

@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import StarRating from '../../components/starRating';
-import '../../styles/movie.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import StarRating from "../../components/starRating";
+import "../../styles/movie.css";
 
 const MovieGrid = () => {
   const [movies, setMovies] = useState([]);
@@ -35,6 +35,7 @@ const MovieGrid = () => {
                               <img src={movie.image_url} alt={movie.title} className="rounded shadow mb-4" />
                               <h3 className="font-semibold mb-4 text-black-200">{movie.title}</h3>
                               <p className="text-gray font-medium text-sm">{movie.description}</p>
+                              <p className="text-gray font-medium text-sm">{movie.kid_friendly}</p>
                               <div className="py-4">
                               <StarRating />
                               </div>

@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { BsArrowRight } from 'react-icons/bs';
-import 'animate.css';
-import '../../styles/hero.css';
+import React from "react";
+import { BsArrowRight } from "react-icons/bs";
+import ModalComponent from "../../components/auth";
+import "animate.css";
+import "../../styles/hero.css";
 
 function Hero() {
   // const handleSubmit = (e) => {
@@ -17,13 +19,13 @@ function Hero() {
             
           <div className="w-[50%]">
             <h1 className="text-4xl text-white font-extrabold pb-4">Discover the exciting world <span className="break">of halaltainment</span></h1>
-            <p className="heading heroCopy text-white justify-start font-medium tracking-small pb-5">
+            <p className="heading heroCopy text-white justify-start font-medium tracking-small pb-6">
               Your platform for insightful movie and books reviews <span className="break"> guiding you through resonating
               entertainment that</span> align with your faith and principles.
             </p>
-            <Link to="/login" className="text-pink">
-              <span className="row">Explore with Us<BsArrowRight className="ml-2 text-1xl" /></span>
-            </Link>
+            <div className="text-pink">
+              <ModalComponent cta="Explore with Us" /> 
+            </div>
           </div>
 
           {/* <div className="bg-offwhite contain">

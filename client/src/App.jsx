@@ -2,8 +2,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import MoviePage from "./pages/moviepage";
+import AboutUs from "./pages/aboutpage";
 import BookPage from "./pages/bookpage";
-import User from "./pages/userprofile/user";
 import HomePage from "./pages/homepage";
 import SubscriptionPage from "./pages/subscription";
 import Faq from "./pages/faq/faq";
@@ -25,16 +25,16 @@ function App() {
 			element: <BookPage/>
 		},
 		{
-			path: "/user-profile",
-			element: <User />
-		},
-		{
 			path: "/subscribe",
 			element: <SubscriptionPage />
 		},
 		{
 			path: "/faq",
 			element: <Faq />
+		}, 
+		{
+			path: "/about",
+			element: <AboutUs />
 		}, 
 		{
 			path: "/reviewedit",

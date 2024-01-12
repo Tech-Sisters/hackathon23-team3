@@ -9,44 +9,11 @@ import BrandLogo from "../assets/Logo.svg";
 import { IoSearchOutline } from "react-icons/io5";
 import "../styles/head.css";
 
-const Head = ({ backgroundColor }) => {
-
-
-  const [scrollY, setScrollY] = useState(0);
-  const [headStyle, setHeadStyle] = useState("bg-transparent");
-  const [searchStyle, setSearchStyle] = useState("bg-gradient-to-r from-pink");
-  const [textStyle, setTextStyle] = useState("text-black-200");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [scrollY]);
-
-  useEffect(() => {
-    if (scrollY > 100) {
-      setHeadStyle("bg-dark"); 
-      setSearchStyle("bg-transparent"); 
-      setTextStyle("text-white"); 
-    } else {
-      setHeadStyle("bg-transparent");
-      setSearchStyle("bg-gradient-to-r from-pink"); 
-      setTextStyle("text-white"); 
-
-    }
-  }, [scrollY, backgroundColor]);
-
-
+const Header = () => {
 
       return (
             <>
-                  <header className={`fixed w-full ${headStyle} z-10 flex items-center py-3`}>
+                  <header className="fixed w-full bg-black-200 z-10 flex items-center text-white py-2">
                         <div className="w-[90%]  mx-auto flex items-center justify-between">
                               <div className="flex items-center">
                                  <Link to="/">
@@ -54,7 +21,7 @@ const Head = ({ backgroundColor }) => {
                                  </Link>
                               </div>
                               
-                              <nav className={`${textStyle} space-x-6`}>
+                              <nav className="space-x-6">
 
                                     <Link to="/movies" className="text-lg hover:text-hover">
                                           Movies
@@ -77,7 +44,7 @@ const Head = ({ backgroundColor }) => {
                               
                               <div className="ml-[30%] flex items-center">
                                     
-                                    <Link className={`${searchStyle} text-white py-1 px-2 rounded text-2xl mr-8 cursor-pointer`}>
+                                    <Link className=" text-white py-1 px-2 rounded text-2xl mr-8 cursor-pointer">
                                      <IoSearchOutline />
                                     </Link>
                                     <div>
@@ -98,4 +65,4 @@ const Head = ({ backgroundColor }) => {
       );
 }
 
-export default Head;
+export default Header;

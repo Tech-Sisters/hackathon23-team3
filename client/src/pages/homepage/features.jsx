@@ -46,9 +46,7 @@ function Feature() {
             
           
             
-            <Link to="/signup" className="button bg-pink text-white py-1 px-6 rounded hover:bg-opacity-90 transition duration-300">
-              Join us
-            </Link>
+    
           </div>
 
 

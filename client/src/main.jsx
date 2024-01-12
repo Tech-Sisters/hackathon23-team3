@@ -5,7 +5,8 @@ import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "./redux/store.js";
+import { store, persistor } from "./redux/store.js";
+import { PersistGate } from "redux-persist/integration/react";
 import { RecoilRoot } from "recoil";
 import App from "./App.jsx";
 import "./App.css";
@@ -17,11 +18,13 @@ root.render(
 	<React.StrictMode>
 		<BrowserRouter>
 		    <Provider store={store}>
+		        <PersistGate persistor={persistor} loading={null}>
 				<RecoilRoot>
 					<QueryClientProvider client={queryClient}>
 						<App />
 					</QueryClientProvider>
 				</RecoilRoot>
+			  </PersistGate>
 		     </Provider>
 		</BrowserRouter>
 	</React.StrictMode>

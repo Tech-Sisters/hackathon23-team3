@@ -1,6 +1,7 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react";
+import PropTypes from "prop-types";
+import Header from "../../components/header";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -10,21 +11,36 @@ import "../../styles/herosection.css";
 import { Link } from "react-router-dom";
 
 
-const CustomPrevArrow = (props) => (
-	<div onClick={props.onClick}>
+const CustomPrevArrow = ({ onClick }) => (
+	<div onClick={onClick}>
 		<GrFormPrevious className="custom-arrow custom-prev-arrow"/>	
 	</div>
 );
 
 
-const CustomNextArrow = (props) => (
-	<div onClick={props.onClick}>
+const CustomNextArrow = ({ onClick }) => (
+	<div onClick={onClick}>
 		<GrFormNext className="custom-arrow custom-next-arrow"/>
 
 	</div>
 );
 
+CustomPrevArrow.propTypes = {
+      onClick: PropTypes.func.isRequired,
+};
+
+
+CustomNextArrow.propTypes = {
+      onClick: PropTypes.func.isRequired,
+};
+
+export { CustomPrevArrow, CustomNextArrow };
+
+
+
+
 const HeroSlider = () => {
+
   const settings = {
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
@@ -35,7 +51,7 @@ const HeroSlider = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    dotsClass: 'slick-dots custom-dots-class',
+    dotsClass: "slick-dots custom-dots-class",
     responsive: [
       {
             breakpoint: 1024,
@@ -58,11 +74,13 @@ const HeroSlider = () => {
     ],
   };
 
+
+
   return (
 
-     <>  
-         
-         <Slider {...settings} className="h-[90vh]">
+     <>   
+           <Header />        
+           <Slider {...settings} className="h-[90vh]">
               <div className="brightness-50">
                   <Link to="/" className="">
                         <img src={bgimage} alt="" className="bg-cover bg-center h-auto w-[100%]" />

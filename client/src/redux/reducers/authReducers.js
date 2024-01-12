@@ -4,7 +4,7 @@ import {
       SIGNUP_SUCCESS,
       SIGNUP_FAILURE,
       SET_USER_AUTHENTICATED,
-} from "../actions/authActions";
+} from "../actions/authAction";
 
 const initialState = {
       isAuthenticated: false,
@@ -38,4 +38,3 @@ switch (action.type) {
 };
     
 export default authReducer;
-    

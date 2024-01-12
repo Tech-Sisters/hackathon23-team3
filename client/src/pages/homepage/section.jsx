@@ -16,7 +16,7 @@ function Section() {
               for these content, empowering you to make informed choices that resonate 
               with your beliefs.
             </p>
-            <Link to="/" className="button cursor-pointer bg-pink text-white py-2 px-6 rounded hover:bg-opacity-90 transition duration-300">
+            <Link to="/about" className="button cursor-pointer bg-pink text-white py-2 px-6 rounded hover:bg-opacity-90 transition duration-300">
               Learn more
             </Link>
           </div>
